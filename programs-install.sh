@@ -1,5 +1,7 @@
 #!/bin/bash/
 
+# Programs I usually install everytime I install linux
+
 sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
 sudo pacman -Syy
