@@ -50,3 +50,8 @@ Find the line towards the top titled GRUB_CMDLINE_LINUX_DEFAULT & add amd_iommu=
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 amd_iommu=on iommu=pt video=efifb:off"
 ```
 
+After saving the changes to your grub config file we need to regenerate it by running the following command
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
