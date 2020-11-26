@@ -109,3 +109,8 @@ Delete all of the code above the found line
 https://user-images.githubusercontent.com/3674090/44610217-c4c17a00-a7ea-11e8-908d-b988644681e3.png
 
 Save the now patched rom & keep it somewhere you can remember
+
+#### 6. Setup your Virtual Machine
+
+I won't go over setting up a basic virt manager virtual machine here there are hundreds of tutorials on that, but once you do I recommend installing windows 10 before anything because the windows installation needs to restart like 10 times **LITERALLY**. With this single GPU passthrough method, you don't want to restart the machine ever that will cause issues you want to shutdown manually & start it back up manually if you want to restart it.  
+
