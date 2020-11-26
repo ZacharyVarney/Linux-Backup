@@ -78,4 +78,4 @@ IOMMU Group 13:
 
 If it's in its own group you're golden, but if it's not then there are some extra measures you will need to take called ACS patching that I will not cover here  
 
-#### 4. Setting up the the teardown & startup scripts
+#### 4. Setting up the hooks
