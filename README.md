@@ -13,3 +13,10 @@ We all know Linux gaming is getting better & better, but there are still occasio
 * PSU: EVGA B1 Bronze 500W
 * Storage: 2 7200RPM 300GB Hard drives
 * Case: DIYPC D480W
+
+### Requirments
+- A motherboard capable of IOMMU
+- A motherboard with sane IOMMU group separation("NOT NECISARALLY A REQUIREMENT BUT YOU WANT THAT")
+- A dedicated GPU obviously
+
+### Getting Started
