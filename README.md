@@ -1,2 +1,2 @@
 # Zachs Linux Backup
-My backed up files of things I personally use &amp; configs I have set on my GNU/Linux experience 
+Backed up files of things I use & configs I have set for my GNU/Linux experience
