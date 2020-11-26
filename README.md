@@ -21,4 +21,6 @@ We all know Linux gaming is getting better & better, but there are still occasio
 
 ### Getting Started
 #### 1. Install the necessary virtualization packages for your distribution
-
+```
+Arch Based Distros
+```
