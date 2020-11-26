@@ -55,3 +55,23 @@ After saving the changes to your grub config file we need to regenerate it by ru
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+After regenerating the grub config file you will need to reboot your machine.  
+
+Now we need to check our IOMMU groups we can do this by running the following command
+```
+#!/bin/bash
+shopt -s nullglob
+for g in /sys/kernel/iommu_groups/*; do
+    echo "IOMMU Group ${g##*/}:"
+    for d in $g/devices/*; do
+        echo -e "\t$(lspci -nns ${d##*/})"
+    done;
+done;
+```
+
+In this list find your GPU & see if it's in its own group, for example mine
+```
+IOMMU Group 13:
+	23:00.0 VGA compatible controller [0300]: NVIDIA Corporation GP107 [GeForce GTX 1050 Ti] [10de:1c82] (rev a1)
+	23:00.1 Audio device [0403]: NVIDIA Corporation GP107GL High Definition Audio Controller [10de:0fb9] (rev a1)
+```
