@@ -18,6 +18,7 @@ Case: DIYPC D480W
 - A motherboard capable of IOMMU
 - A motherboard with sane IOMMU group separation("NOT NECISARALLY A REQUIREMENT BUT YOU WANT THAT")
 - A dedicated GPU obviously
+- A hex editor
 
 ### Getting started
 #### 1. Install the necessary virtualization packages for your distribution
@@ -101,10 +102,10 @@ Get your GPU's current vbios from this website https://www.techpowerup.com/vgabi
 
 Use the dumped/downloaded bios and open it in a hex editor
 
-Search in the strings for the line including "VIDEO" that starts with a "U"
+Search in the strings for the line including "VIDEO" that starts with a "U"  
 https://user-images.githubusercontent.com/3674090/44610184-aa879c00-a7ea-11e8-9772-408e807aea02.png
 
-Delete all of the code above the found line
+Delete all of the code above the found line  
 https://user-images.githubusercontent.com/3674090/44610217-c4c17a00-a7ea-11e8-908d-b988644681e3.png
 
 Save!
