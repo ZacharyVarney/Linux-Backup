@@ -80,7 +80,7 @@ If it's in its own group you're golden, but if it's not then there are some extr
 
 #### 4. Setting up the hooks
 
-**Special thanks to risingprismtv for providing these scripts & his Discord for originally helping me get all this stuff working!**  
+**Special thanks to [risingprismtv](https://gitlab.com/risingprismtv) for providing these scripts & his [Discord](https://discord.com/invite/bh4maVc) for originally helping me get all this stuff working!**  
 
 Follow these instructions to install the scripts properly
 ```
