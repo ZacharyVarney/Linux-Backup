@@ -101,6 +101,8 @@ Get your GPU's current vbios from this website https://www.techpowerup.com/vgabi
 
 Use the dumped/downloaded bios and open it in a hex editor
 
-Search in the strings for the line including "VIDEO" that starts with a "U" VIDEO_STRING_IN_HEX
+Search in the strings for the line including "VIDEO" that starts with a "U"
+
+https://user-images.githubusercontent.com/3674090/44610184-aa879c00-a7ea-11e8-9772-408e807aea02.png
 
 Delete all of the code above the found line DELETE_FOUND_CODE
