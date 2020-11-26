@@ -57,7 +57,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 After regenerating the grub config file you will need to reboot your machine.  
 
-Now we need to check our IOMMU groups we can do this by running the following command
+Now we need to check our IOMMU groups, we can do this by running the following command
 ```
 #!/bin/bash
 shopt -s nullglob
@@ -75,3 +75,6 @@ IOMMU Group 13:
 	23:00.0 VGA compatible controller [0300]: NVIDIA Corporation GP107 [GeForce GTX 1050 Ti] [10de:1c82] (rev a1)
 	23:00.1 Audio device [0403]: NVIDIA Corporation GP107GL High Definition Audio Controller [10de:0fb9] (rev a1)
 ```
+
+If it's in its own group you're golden, but if it's not then there are some extra measures you will need to take called ACS patching that I will not cover here  
+
