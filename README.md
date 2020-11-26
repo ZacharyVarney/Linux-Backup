@@ -80,7 +80,7 @@ If it's in its own group you're golden, but if it's not then there are some extr
 
 #### 4. Setting up the hooks
 
-**Special thanks to [risingprismtv](https://gitlab.com/risingprismtv) for providing these scripts & his [Discord](https://discord.com/invite/bh4maVc) for originally helping me get all this stuff working!**  
+**Special thanks to [risingprismtv](https://gitlab.com/risingprismtv) for providing these scripts & his [Discord](https://discord.com/invite/bh4maVc) for helping me get all this stuff working!**  
 
 Follow these instructions to install the scripts properly
 ```
@@ -95,3 +95,8 @@ sudo systemctl restart libvirtd
 ```
 
 #### 5. Getting a patched vbios rom for your GPU
+
+Get your GPU's current vbios from this website https://www.techpowerup.com/vgabios/
+**NOTE**
+If there are multiple bios versions for your card you need to find the exact one your card has. I found out mine from the Nvidia X Server settings app.
+
