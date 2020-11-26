@@ -26,3 +26,8 @@ Case: DIYPC D480W
 ```
 sudo pacman -S qemu libvirt ovmf virt-manager --noconfirm
 ```
+
+##### Debian Based Distros
+```
+sudo apt install 
+```
