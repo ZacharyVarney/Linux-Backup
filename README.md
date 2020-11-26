@@ -96,7 +96,7 @@ sudo systemctl restart libvirtd
 
 #### 5. Getting a patched vbios rom for your GPU
 
-Get your GPU's current vbios from this website https://www.techpowerup.com/vgabios/
-**NOTE**
+Get your GPU's current vbios from this website https://www.techpowerup.com/vgabios/  
+**NOTE**  
 If there are multiple bios versions for your card you need to find the exact one your card has. I found out mine from the Nvidia X Server settings app.
 
