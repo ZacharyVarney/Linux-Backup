@@ -15,8 +15,8 @@ We all know Linux gaming is getting better & better, but there are still occasio
 * Case: DIYPC D480W
 
 ### Requirments
-- A motherboard capable of IOMMU
-- A motherboard with sane IOMMU group separation("NOT NECISARALLY A REQUIREMENT BUT YOU WANT THAT")
-- A dedicated GPU obviously
+1. A motherboard capable of IOMMU
+2. A motherboard with sane IOMMU group separation("NOT NECISARALLY A REQUIREMENT BUT YOU WANT THAT")
+3. A dedicated GPU obviously
 
 ### Getting Started
