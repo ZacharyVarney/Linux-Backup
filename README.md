@@ -108,4 +108,4 @@ https://user-images.githubusercontent.com/3674090/44610184-aa879c00-a7ea-11e8-97
 Delete all of the code above the found line  
 https://user-images.githubusercontent.com/3674090/44610217-c4c17a00-a7ea-11e8-908d-b988644681e3.png
 
-Save!
+Save the now patched rom & keep it somewhere you can remember
