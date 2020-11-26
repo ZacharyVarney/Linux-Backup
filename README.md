@@ -22,7 +22,7 @@ Case: DIYPC D480W
 ### Getting Started
 #### 1. Install the necessary virtualization packages for your distribution
 
-*** I ONLY USE ARCH ***
+*** I ONLY USE ARCH ***  
 So you will have to do a bit of research to follow the syntax differences on fedora or a debian based distro.
 
 ##### Arch Based Distros
