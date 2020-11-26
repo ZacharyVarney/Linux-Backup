@@ -11,3 +11,5 @@ We all know Linux gaming is getting better & better, but there are still occasio
 * Motherboard: ASRock B450M Pro4
 * RAM: Crucial Ballistix (2x8GB)16GB DDR4 3000MHz
 * PSU: EVGA B1 Bronze 500W
+* Storage: 2 7200RPM 300GB Hard drives
+* Case: DIYPC D480W
