@@ -19,7 +19,7 @@ Case: DIYPC D480W
 - A motherboard with sane IOMMU group separation("NOT NECISARALLY A REQUIREMENT BUT YOU WANT THAT")
 - A dedicated GPU obviously
 
-### Getting Started
+### Getting started
 #### 1. Install the necessary virtualization packages for your distribution
 
 **I ONLY USE ARCH**  
@@ -45,7 +45,7 @@ sudo virsh net-autostart default
 
 To enable IOMMU you will need to add some parameters to your grub config file located at /etc/default/grub  
 
-Find the line towards the top titled GRUB_CMDLINE_LINUX_DEFAULT & add amd_iommu=on iommu=pt or intel_iommu=on iommu=pt depending on what CPU you have, for example for me it would be
+Find the line towards the top titled GRUB_CMDLINE_LINUX_DEFAULT & add amd_iommu=on iommu=pt video=efifb:off or intel_iommu=on iommu=pt video=efifb:off depending on what CPU you have, for example for me it would be
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 amd_iommu=on iommu=pt video=efifb:off"
 ```
@@ -79,3 +79,19 @@ IOMMU Group 13:
 If it's in its own group you're golden, but if it's not then there are some extra measures you will need to take called ACS patching that I will not cover here  
 
 #### 4. Setting up the hooks
+
+**Special thanks to risingprismtv for providing these scripts & his Discord for originally helping me get all this stuff working!**  
+
+Follow these instructions to install the scripts properly
+```
+sudo rm -rf /etc/libvirt/hooks/qemu.d
+git clone https://gitlab.com/risingprismtv/single-gpu-passthrough
+sudo mkdir  /etc/libvirt/hooks/
+cd single-gpu-passthrough/
+git checkout minimal
+sudo chmod +x install_hooks.sh
+sudo ./install_hooks.sh
+sudo systemctl restart libvirtd
+```
+
+#### 5. Getting a patched vbios rom for your GPU
