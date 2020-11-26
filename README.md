@@ -20,4 +20,5 @@ We all know Linux gaming is getting better & better, but there are still occasio
 - A dedicated GPU obviously
 
 ### Getting Started
-1. Install the necessary virtualization packages for your distribution 
+##### 1. Install the necessary virtualization packages for your distribution
+
