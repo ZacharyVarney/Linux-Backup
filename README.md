@@ -22,14 +22,14 @@ Case: DIYPC D480W
 ### Getting Started
 #### 1. Install the necessary virtualization packages for your distribution
 
-***I ONLY USE ARCH***  
+**I ONLY USE ARCH**  
 So you will have to do a bit of research to follow the differences on fedora or a debian based distro.
 
 ```
 sudo pacman -S qemu libvirt ovmf virt-manager ebtables iptables dnsmasq --noconfirm
 ```
 
-#### 1. Setting up the services to run & auto start with your PC
+#### 2. Setting up the services to run & auto start with your PC
 
 ```
 sudo systemctl enable libvirtd.service  
@@ -40,4 +40,6 @@ sudo sudo systemctl restart libvirtd
 sudo virsh net-start default  
 sudo virsh net-autostart default
 ```
+
+#### 3. Getting IOMMU ready
 
