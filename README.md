@@ -43,3 +43,10 @@ sudo virsh net-autostart default
 
 #### 3. Getting IOMMU ready
 
+To enable IOMMU you will need to add some parameters to your grub config file located at /etc/default/grub  
+
+Find the line towards the top titled GRUB_CMDLINE_LINUX_DEFAULT="" & add amd_iommu=on iommu=pt or intel_iommu=on iommu=pt depending on what CPU you have for example for me it would be
+```
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 amd_iommu=on iommu=pt video=efifb:off"
+```
+
