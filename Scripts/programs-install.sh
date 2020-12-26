@@ -2,7 +2,7 @@
 
 sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
-sudo pacman -Syy
+sudo pacman -Sy
 
 sudo pacman -S nvidia-settings grub-customizer flatpak teamspeak3 discord code steam rofi terminator
 
