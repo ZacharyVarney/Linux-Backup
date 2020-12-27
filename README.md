@@ -27,7 +27,7 @@ Case: DIYPC D480W
 So you will have to do a bit of research to follow the differences on fedora or a debian based distro.
 
 ```
-sudo pacman -S qemu libvirt ovmf virt-manager ebtables iptables dnsmasq --noconfirm
+sudo pacman -S qemu libvirt ovmf virt-manager ebtables iptables dnsmasq
 ```
 
 #### 2. Setting up the services to run & auto start with your PC
