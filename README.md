@@ -24,7 +24,7 @@ Case: DIYPC D480W
 #### 1. Install the necessary virtualization packages for your distribution
 
 **I ONLY USE ARCH**  
-So you will have to do a bit of research to follow the differences on fedora or a debian based distro.
+So you will have to do a bit of research to follow the differences on fedora or a debian based distro
 
 ```
 sudo pacman -S qemu libvirt ovmf virt-manager ebtables iptables dnsmasq
@@ -56,7 +56,7 @@ After saving the changes to your grub config file we need to regenerate it by ru
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-After regenerating the grub config file you will need to reboot your machine.  
+After regenerating the grub config file you will need to reboot your machine  
 
 Now we need to check our IOMMU groups, we can do this by running the following command
 ```
