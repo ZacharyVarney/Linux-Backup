@@ -97,4 +97,8 @@ sudo systemctl restart libvirtd
 
 #### 5. Getting a patched vbios rom for your GPU
 
+The patched GPU rom is for getting around GPU already in use error when launching the VM
 
+One way to get a patched rom is getting it from (https://www.techpowerup.com/vgabios/), **MAKE SURE ITS THE EXACT VERSION YOUR GPU HAS**
+
+I got my GPU bios version from the Nvidia X Server settings app
