@@ -98,3 +98,11 @@ sudo systemctl restart libvirtd
 #### 5. Getting a patched vbios rom for your GPU
 
 
+
+#### 6. Setting up your VM
+
+
+
+#### 7. (**OPTIONAL**)Performance improvements
+
+
