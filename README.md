@@ -102,4 +102,6 @@ There are two ways you can obtain the correct GPU rom
 1. Getting it from https://www.techpowerup.com/vgabios/, it is possible it wont have yours & you will have to do #2  
 **YOU NEED TO MAKE SURE YOU GET THE EXACT VERSION ON YOUR GPU**
 
-2. Dump the current bios on your GPU
+2. Dump the current bios from your GPU
+
+Next you will need to patch the rom, if you have a NVIDIA 10 series card you can use [NVIDIA vBios Patcher](https://github.com/Matoking/NVIDIA-vBIOS-VFIO-Patcher)
