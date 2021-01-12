@@ -11,7 +11,7 @@ GPU: MSI Gaming X 4G Geforce GTX 1050Ti
 Motherboard: ASRock B450M Pro4  
 RAM: Crucial Ballistix (2x8GB)16GB DDR4 3000MHz  
 PSU: EVGA B1 Bronze 500W  
-Storage: 2 7200RPM 300GB Hard drives  
+Storage: 2 7200RPM 300GB Hard drives & 1 500GB Samsung 970 Evo NVME SSD  
 Case: DIYPC D480W
 
 ### Requirments
