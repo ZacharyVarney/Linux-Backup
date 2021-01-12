@@ -16,8 +16,8 @@ Case: DIYPC D480W
 
 ### Requirments
 - A motherboard capable of IOMMU
-- A motherboard with sane IOMMU group separation("NOT NECISARALLY A REQUIREMENT BUT YOU WANT THAT")
-- A dedicated GPU("I DON'T KNOE IF THIS WORKS WITH AN iGPU")
+- A motherboard with sane IOMMU group separation(**NOT NECISARALLY A REQUIREMENT BUT YOU WANT THAT**)
+- A dedicated GPU(**I DON'T KNOW IF THIS WORKS WITH AN iGPU**)
 - A hex editor
 
 ### Getting started
