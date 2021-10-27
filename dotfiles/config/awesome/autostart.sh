@@ -7,7 +7,8 @@ APPS=(
     volumeicon
     picom
     lxsession
-    ~/Documents/nvidia-power.sh
+    octoxbps-notifier
+    ~/.config/awesome/nvidia-power.sh
     )
 
 # Some applications start child applications that need to be killed on reload

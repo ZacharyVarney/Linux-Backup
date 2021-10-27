@@ -16,7 +16,6 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
-local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -105,7 +104,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock('<span color="#ffffff" font="Fira Sans Bold 10"> %a %b %d, %l:%M %p </span>', 3)
+mytextclock = wibox.widget.textclock('<span color="#ffffff" font="Open Sans Bold 10"> %a %b %d, %l:%M %p </span>', 3)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -125,31 +124,9 @@ local taglist_buttons = gears.table.join(
                     awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
                 )
 
-local tasklist_buttons = gears.table.join(
-                     awful.button({ }, 1, function (c)
-                                              if c == client.focus then
-                                                  c.minimized = true
-                                              else
-                                                  c:emit_signal(
-                                                      "request::activate",
-                                                      "tasklist",
-                                                      {raise = true}
-                                                  )
-                                              end
-                                          end),
-                     awful.button({ }, 3, function()
-                                              awful.menu.client_list({ theme = { width = 250 } })
-                                          end),
-                     awful.button({ }, 4, function ()
-                                              awful.client.focus.byidx(1)
-                                          end),
-                     awful.button({ }, 5, function ()
-                                              awful.client.focus.byidx(-1)
-                                          end))
-
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
-    awful.tag({ "  ", "  ", "  ", "  ", "  " }, s, awful.layout.layouts[1])
+    awful.tag({ "  ", "  ", "  ", "  ", "  " }, s, awful.layout.layouts[1])
 
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist {
@@ -157,7 +134,14 @@ awful.screen.connect_for_each_screen(function(s)
         filter  = awful.widget.taglist.filter.all,
         buttons = taglist_buttons
     }
-
+    
+	-- Create a tasklist widget
+    s.mytasklist = awful.widget.tasklist {
+        screen  = s,
+        filter  = awful.widget.tasklist.filter.focused,
+        buttons = tasklist_buttons
+    }
+    
 	-- Create seperator widget
 	s.mysep = wibox.widget {
 		widget = wibox.widget.separator,
@@ -169,7 +153,7 @@ awful.screen.connect_for_each_screen(function(s)
 		position = "bottom", 
 		screen = s,
 		height = 32,
-		bg = "#121212" .. "BF"
+		bg = "#111111" .. "BF"
     })
 
     -- Add widgets to the wibox
@@ -179,16 +163,9 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
         },
-        s.mysep,
+         wibox.layout.margin(s.mytasklist, 0, 800, 5, 5),
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.layout.margin(weather_widget({
-				api_key='ade9990c9f83722d69a21e49432916d1',
-				coordinates = {37.8145, -82.8071},
-				time_format_12h = true,
-				units = 'imperial',
-				font_name = 'Fira Sans Bold 10'
-			}), 8, 8, 3, 3),
             wibox.layout.margin(wibox.widget.systray(), 8, 8, 8, 8),
             wibox.layout.margin(mytextclock, 8, 8, 0, 0),
         },
@@ -283,10 +260,13 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "r",     function () awful.spawn("bash /home/zach/.config/rofi/launchers/misc/launcher.sh") end,
               {description = "run prompt", group = "launcher"}),
               
+    awful.key({ modkey },            "y",     function () awful.spawn("bash /home/zach/.config/rofi/launchers/misc/launcher-power.sh") end,
+              {description = "open powermenu", group = "launcher"}), 
+             
     awful.key({ modkey },            "f",     function () awful.spawn("pcmanfm") end,
               {description = "open file manager", group = "launcher"}),
               
-    awful.key({ modkey },            "b",     function () awful.spawn("brave") end,
+    awful.key({ modkey },            "b",     function () awful.spawn("brave-browser-stable") end,
               {description = "open browser", group = "launcher"}),
               
     awful.key({ modkey },            "p",     function () awful.spawn("pavucontrol") end,
@@ -301,7 +281,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey2 },            "Tab",     function () awful.spawn("bash /home/zach/.config/rofi/launchers/misc/launcher-window.sh") end,
               {description = "open window switcher", group = "launcher"}),
             
-    awful.key({ modkey },            "0",     function () awful.spawn("killall picom") end,
+    awful.key({ modkey },            "0",     function () awful.spawn("pkill picom") end,
               {description = "kill compositor", group = "awesome"}),
               
     awful.key({ modkey },            "9",     function () awful.spawn("picom") end,
@@ -451,10 +431,10 @@ awful.rules.rules = {
 
     -- Open apps on specific screen & tag
     { rule = { class = "ts3client_linux_amd64" },
-		properties = { screen = 0, tag = "  " },
+		properties = { screen = 2, tag = "  " },
 	
 	  rule = { class = "Steam" },
-		properties = { screen = 1, tag = "  " } },
+		properties = { screen = 1, tag = "  " } },
 }
 -- }}}
 
@@ -497,45 +477,57 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Snapping Box
 beautiful.snap_border_width = 2
-beautiful.snap_bg = "#5294E2"
+beautiful.snap_bg = "#3F51B5"
 beautiful.snap_shape = gears.shape.rectangle
 
 -- Taglist
-beautiful.taglist_font = "Iosevka Term Medium 28"
+beautiful.taglist_font = "Hack Nerd Font Mono 26"
 beautiful.taglist_fg_focus = "#ffffff"
-beautiful.taglist_bg_focus = "#5294E2"
+beautiful.taglist_bg_focus = "#3F51B5"
 beautiful.taglist_fg_urgent = "#ffffff"
 beautiful.taglist_bg_urgent = "#F93900"
 beautiful.taglist_fg_occupied = "#ffffff"
 beautiful.taglist_fg_empty = "#383838"
 
+-- Tasklist
+beautiful.tasklist_fg_normal = "#ffffff"
+beautiful.tasklist_bg_normal = "#000000" .. "00"
+beautiful.tasklist_fg_focus = "#ffffff"
+beautiful.tasklist_bg_focus = "#000000" .. "00"
+beautiful.tasklist_fg_urgent = "#ffffff"
+beautiful.tasklist_bg_urgent = "#000000" .. "00"
+beautiful.tasklist_fg_minimize = "#ffffff"
+beautiful.tasklist_bg_minimize = "#000000" .. "00"
+beautiful.tasklist_plain_task_name = true
+beautiful.tasklist_font = "Open Sans Bold 10"
+
 -- Notifications
-beautiful.notification_bg = "#121212" .. "BF"
+beautiful.notification_bg = "#111111" .. "BF"
 beautiful.notification_fg = "#ffffff"
-beautiful.notification_border_color	= "#5294E2"
+beautiful.notification_border_color	= "#3F51B5"
 beautiful.notification_max_width = 400
 beautiful.notification_max_height = 115
 beautiful.notification_margin = 10
-beautiful.notification_font = "Fira Sans Bold 10"
+beautiful.notification_font = "Open Sans Bold 10"
 
 -- Hotkey Sheet
-beautiful.hotkeys_bg = "#121212" .. "BF"
-beautiful.hotkeys_border_color = "#5294E2"
+beautiful.hotkeys_bg = "#111111" .. "BF"
+beautiful.hotkeys_border_color = "#3F51B5"
 beautiful.hotkeys_fg = "#FFFFFF"
 beautiful.hotkeys_modifiers_fg = "#383838"
-beautiful.hotkeys_group_margin = 50
-beautiful.hotkeys_font = "Fira Sans Bold 10"
-beautiful.hotkeys_description_font = "Fira Sans Medium 9"
+beautiful.hotkeys_group_margin = 30
+beautiful.hotkeys_font = "Open Sans Bold 10"
+beautiful.hotkeys_description_font = "Open Sans Medium 9"
 
 -- Systray
 beautiful.systray_icon_spacing = 8
-beautiful.bg_systray = "#121212" .. "00"
+beautiful.bg_systray = "#111111" .. "00"
 
 -- Gaps
 beautiful.useless_gap = 15
 
 -- Window Borders
-beautiful.border_focus = "#5294E2"
+beautiful.border_focus = "#3F51B5"
 
 -- Autostart
 awful.spawn.with_shell("bash /home/zach/.config/awesome/autostart.sh")
