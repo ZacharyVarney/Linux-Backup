@@ -7,7 +7,6 @@ APPS=(
     volumeicon
     picom
     lxsession
-    octoxbps-notifier
     ~/.config/awesome/nvidia-power.sh
     )
 
