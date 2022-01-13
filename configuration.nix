@@ -90,6 +90,7 @@
     curl
     cmake
     samba
+    glxinfo
 
     # Utilities
     pavucontrol
