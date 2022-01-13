@@ -137,9 +137,7 @@
     # Fonts
     font-awesome
     ubuntu_font_family
-    nerdfonts
     hack-font
-    fira-mono
     fantasque-sans-mono
     roboto
     noto-fonts
