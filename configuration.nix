@@ -13,7 +13,7 @@
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
-  # Kernel & graphics driver.
+  # Kernel
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Use the systemd-boot EFI boot loader.
