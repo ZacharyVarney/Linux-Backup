@@ -63,6 +63,8 @@ window:
   #     - buttonless: Title bar, transparent background and no title bar buttons
   #decorations: full
 
+  opacity: 0.8
+
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:
@@ -179,7 +181,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '#121212'
+    background: '#111111'
     foreground: '#ffffff'
 
     # Bright and dim foreground colors
@@ -268,22 +270,22 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#121212'
+    black:   '#111111'
     red:     '#b02626'
     green:   '#40a62f'
     yellow:  '#f2e635'
-    blue:    '#314ad0'
+    blue:    '#3F51B5'
     magenta: '#b30ad0'
     cyan:    '#32d0fc'
     white:   '#ffffff'
 
   # Bright colors
   bright:
-    black:   '#121212'
+    black:   '#111111'
     red:     '#b02626'
     green:   '#40a62f'
     yellow:  '#f2e635'
-    blue:    '#314ad0'
+    blue:    '#3F51B5'
     magenta: '#b30ad0'
     cyan:    '#32d0fc'
     white:   '#ffffff'
@@ -293,14 +295,14 @@ colors:
   # If the dim colors are not set, they will be calculated automatically based
   # on the `normal` colors.
   dim:
-    black:   '#676f78'
-    red:     '#b55454'
-    green:   '#78a670'
-    yellow:  '#faf380'
-    blue:    '#707fd0'
-    magenta: '#c583d0'
-    cyan:    '#8adaf1'
-    white:   '#e0e3e7'
+    black:   '#111111'
+    red:     '#b02626'
+    green:   '#40a62f'
+    yellow:  '#f2e635'
+    blue:    '#3F51B5'
+    magenta: '#b30ad0'
+    cyan:    '#32d0fc'
+    white:   '#ffffff'
 
   # Indexed Colors
   #
@@ -352,12 +354,6 @@ colors:
   #     args: ["Hello, World!"]
   #
   #command: None
-
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.75
 
 selection:
   # This string contains all characters that are used as separators for
