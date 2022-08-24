@@ -81,23 +81,23 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     # Core utils
-	git
-	neofetch
-	wget
-	curl
-	cmake
-	neovim
-	asciiquarium
-	cmatrix
-	termdown
-	fish
-	micro
-	starship
-	bpytop
-	flatpak
-	gamemode
-	xdg-user-dirs
-	dunst
+    git
+    neofetch
+    wget
+    curl
+    cmake
+    neovim
+    asciiquarium
+    cmatrix
+    termdown
+    fish
+    micro
+    starship
+    bpytop
+    flatpak
+    gamemode
+    xdg-user-dirs
+    dunst
 	
     # System apps
     brave
@@ -137,6 +137,10 @@
     jetbrains-mono
     roboto
     fantasque-sans-mono
+    
+    # Themes
+    plata-theme
+    tala-icon-theme
   ];
 
   # Enable steam.
