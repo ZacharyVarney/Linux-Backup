@@ -47,7 +47,18 @@
 
 
   # Enable window manager/desktop & display manager/server here.
-  services.xserver.enable = true;
+  services.xserver = {
+  	enable = true;
+
+	libinput = {
+	  enable = true;
+  	  # disabling mouse acceleration
+  	   mouse = {
+  	     accelProfile = "flat";
+  	   };
+  	 };
+  };
+  services.xserver.videoDrivers = [ "amdgpu" ];
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.windowManager.awesome.enable = true;
   
@@ -78,6 +89,10 @@
   # Allow unfree/unstable packages.
   nixpkgs.config.allowUnfree = true;
 
+  # Enable desktop portals for apps.
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.enable = true;
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     # Core utils
@@ -98,6 +113,13 @@
     gamemode
     xdg-user-dirs
     dunst
+    gvfs
+    pciutils
+    usbutils
+    protonup
+    wineWowPackages.staging
+    libnotify
+    lm_sensors
 	
     # System apps
     brave
@@ -120,15 +142,31 @@
     lxappearance
     pavucontrol
     easyeffects
-    etcher
     flameshot
     xfce.tumbler
     xfce.ristretto
     xfce.xfce4-power-manager
     libreoffice-fresh
     lxde.lxsession
+    xfce.xfce4-taskmanager
+    gnome.gucharmap
+    yuzu-mainline
+    bottles
+    
+    # Themes
+    plata-theme
+    tela-icon-theme
+    capitaine-cursors
+  ];
 
-    # Fonts
+  # Enable steam.
+  programs.steam = {
+  	enable = true;
+  	remotePlay.openFirewall = true;
+  	dedicatedServer.openFirewall = true;
+  };
+
+  fonts.fonts = with pkgs; [
     noto-fonts-emoji
     hack-font
     fira-code
@@ -137,16 +175,14 @@
     jetbrains-mono
     roboto
     fantasque-sans-mono
-    
-    # Themes
-    plata-theme
-    tala-icon-theme
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "Iosevka" "FantasqueSansMono" ]; })
+    dejavu_fonts
+    liberation_ttf
+    ubuntu_font_family
   ];
 
-  # Enable steam.
-  programs.steam = {
-  	enable = true;
-  };
+  # This options keeps curtain applications from breaking.
+  programs.dconf.enable = true;
 
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -158,16 +194,17 @@
   # };
 
 
-  # List services that you want to enable:
-  # Enable the OpenSSH daemon.
+  # List services that you want to enable.
   services.openssh.enable = true;
+  services.gvfs.enable = true;
+  services.flatpak.enable = true;
 
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
 
   # This value determines the NixOS release from which the default
