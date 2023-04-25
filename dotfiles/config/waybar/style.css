@@ -3,7 +3,7 @@
     font-family: Roboto;
     font-size: 13px;
     font-weight: bold;
-    padding: 0;
+    margin: -1;
 }
 
 window#waybar {
@@ -34,6 +34,7 @@ button:hover {
 #workspaces button {
     background-color: transparent;
     color: #ffffff;
+    padding: 0;
 }
 
 #workspaces button:hover {}
@@ -184,7 +185,9 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#tray {}
+#tray {
+	
+}
 
 #tray > .passive {
     -gtk-icon-effect: dim;
