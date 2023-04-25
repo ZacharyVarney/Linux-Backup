@@ -22,7 +22,7 @@ button {
     box-shadow: inset 0 -3px transparent;
     margin-right: 2px;
     /* Avoid rounded borders under each button name */
-   /*border: solid 1px #c0c3ce;
+    /*border: solid 1px #c0c3ce;
     border-radius: 100px; */ 
 }
 
@@ -32,9 +32,9 @@ button:hover {
 }
 
 #workspaces button {
-    background-color: transparent;
     color: #ffffff;
     padding: 0;
+    outline: none;
 }
 
 #workspaces button:hover {}
