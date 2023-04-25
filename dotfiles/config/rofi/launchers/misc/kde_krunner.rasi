@@ -10,7 +10,7 @@
 configuration {
 	font:							"Roboto Medium 10";
     show-icons:                     true;
-	icon-theme: 					"Tela-purple-dark";
+	icon-theme: 					"Tela-dark";
     display-drun: 					"";
     display-window: 				"";
     drun-display-format:            "{name}";
@@ -20,11 +20,11 @@ configuration {
 
 /* -- Breeze Light-- */
 * {
-    background:                     #1a1b26FF;
+    background:                     #111111CC;
     background-alt:              	#00000000;
-    background-bar:                 #ad8ee6FF;
-    foreground:                     #a9b1d6FF;
-    accent:			            	#ad8ee6FF;
+    background-bar:                 #3F51B5FF;
+    foreground:                     #FFFFFFFF;
+    accent:			            	#3F51B5FF;
 }
 
 window {
