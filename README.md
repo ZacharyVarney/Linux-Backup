@@ -9,4 +9,4 @@ This tutorial is based off of the main Arch ISO as I don't want to take the time
 
 ## Installation
 First git clone my github repo that has the required config files.
-1. `git clone https://github.com/ZacharyVarney/Linux-Backup`
+- `git clone https://github.com/ZacharyVarney/Linux-Backup`
