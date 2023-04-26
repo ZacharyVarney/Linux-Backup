@@ -18,7 +18,7 @@ cd Linux-Backup; pacman -Sy archinstall; archinstall --config user-configuration
 ```
 4. After installation is finished it will ask you to chroot into the newly installed system, select no & reboot into the newly installed system.
 
-5. Login in under your created user & git clone my github repo again.
+5. Login under your created user & git clone my github repo again.
 ```
 git clone https://github.com/ZacharyVarney/Linux-Backup
 ```
