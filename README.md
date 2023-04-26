@@ -8,7 +8,12 @@ This tutorial is based off of the main Arch ISO as I don't want to take the time
 
 
 ## Installation
-1. git clone my github repo that has the required config files
+1. git clone my github repo that has the required config files.
 ```
 git clone https://github.com/ZacharyVarney/Linux-Backup
 ```
+2. Run the following command for archinstall. *NOTE* You will need to change some of these values yourself as I cannot speak for you specific system.
+```
+cd Linux-Backup; pacman -Sy archinstall; archinstall --config user-configuration.json
+```
+4. 
