@@ -12,7 +12,7 @@ This tutorial is based off of the main Arch ISO as I don't want to take the time
 ```
 git clone https://github.com/ZacharyVarney/Linux-Backup
 ```
-2. Run the following command for archinstall. *NOTE* You will need to change some of these values yourself as I cannot speak for you specific system.
+2. Run the following command to install & run archinstall. *NOTE* You will need to change some of the archinstall values yourself as I cannot speak for you specific system, an example of this would be disk partitioning.
 ```
 cd Linux-Backup; pacman -Sy archinstall; archinstall --config user-configuration.json
 ```
