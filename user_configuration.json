@@ -91,7 +91,8 @@
         "xdg-user-dirs-gtk",
         "openssh",
         "cronie",
-        "steam"
+        "steam",
+        "dunst"
     ],
     "script": "guided",
     "silent": false,
