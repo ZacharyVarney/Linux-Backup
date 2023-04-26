@@ -87,7 +87,8 @@
         "wine-staging",
         "qt5ct",
         "gnome-system-monitor",
-        "mousepad"
+        "mousepad",
+        "xdg-user-dirs-gtk"
     ],
     "script": "guided",
     "silent": false,
