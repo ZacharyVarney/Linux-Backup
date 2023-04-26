@@ -8,5 +8,5 @@ This tutorial is based off of the main Arch ISO as I don't want to take the time
 
 
 ## Installation
-After booting the ISO run the following commands in order.
-`git clone https://github.com/ZacharyVarney/Linux-Backup`
+First git clone my github repo that has the required config files.
+ `git clone https://github.com/ZacharyVarney/Linux-Backup`
