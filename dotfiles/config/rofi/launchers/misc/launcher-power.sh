@@ -19,4 +19,4 @@ dir="$HOME/.config/rofi/launchers/misc"
 #themes=($(ls -p --hide="launcher.sh" $dir))
 #theme="${themes[$(( $RANDOM % 16 ))]}"
 
-rofi -no-lazy-grab -show p -modi p:"/home/zach/.config/rofi/launchers/misc/rofi-power-menu" -theme $dir/"$theme"
+rofi -no-lazy-grab -show p -modi p:"$HOME/.config/rofi/launchers/misc/rofi-power-menu" -theme $dir/"$theme"
