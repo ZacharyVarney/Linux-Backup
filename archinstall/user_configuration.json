@@ -92,7 +92,10 @@
         "openssh",
         "cronie",
         "steam",
-        "dunst"
+        "dunst",
+        "gvfs",
+        "gvfs-mtp",
+        "gvfs-afc"
     ],
     "script": "guided",
     "silent": false,
