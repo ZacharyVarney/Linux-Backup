@@ -80,6 +80,7 @@
   users.users.zach = {
     isNormalUser = true;
     description = "Zachary Varney";
+    initialPassword = "1234";
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
