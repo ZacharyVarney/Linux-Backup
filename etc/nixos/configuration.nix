@@ -95,7 +95,6 @@
     kate
     goverlay
     protonup-qt
-    teamspeak_client
     discord
     pavucontrol
     prismlauncher-qt5
