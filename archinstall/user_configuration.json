@@ -25,6 +25,7 @@
         "xorg-fonts-type1",
         "man-db",
         "bash-completion",
+        "pacman-contrib",
         "speedtest-cli",
         "fish",
         "micro",
