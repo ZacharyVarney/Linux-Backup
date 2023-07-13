@@ -78,6 +78,7 @@
         "firefox",
         "wine-staging",
         "xdg-user-dirs-gtk",
+        "xdg-desktop-portal-gtk",
         "openssh",
         "cronie",
         "steam",
