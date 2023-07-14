@@ -46,6 +46,7 @@
         "p7zip",
         "flatpak",
         "gamemode",
+        "lib32-gamemode",
         "gamescope",
         "mesa",
         "lib32-mesa",
