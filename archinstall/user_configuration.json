@@ -73,6 +73,8 @@
         "glew",
         "gstreamer-vaapi",
         "openh264",
+        "openal",
+        "lib32-openal",
         "nfs-utils",
         "neovim",
         "htop",
