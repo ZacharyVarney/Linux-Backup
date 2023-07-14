@@ -72,6 +72,7 @@
         "glfw-x11",
         "glew",
         "gstreamer-vaapi",
+        "openh264",
         "nfs-utils",
         "neovim",
         "htop",
