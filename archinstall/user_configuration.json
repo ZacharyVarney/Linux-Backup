@@ -65,6 +65,7 @@
         "lib32-vulkan-icd-loader",
         "libva-utils",
         "vdpauinfo",
+        "libvdpau-va-gl",
         "gstreamer-vaapi",
         "nfs-utils",
         "neovim",
