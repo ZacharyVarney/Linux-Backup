@@ -1,0 +1,6 @@
+# AUTO MOUNTING EXT4 DRIVES TEMPLATE
+# /dev/sdb1
+UUID=907a5290-0958-4ae9-856b-3fb77bcf48df               /home/zach/mounts/Drive2                auto nosuid,nodev,nofail,x-gvfs-show 0 0
+
+# /dev/sda1
+UUID=2745f630-4818-4437-a493-ae0620848289               /home/zach/mounts/Backup                auto nosuid,nodev,nofail,x-gvfs-show 0 0
