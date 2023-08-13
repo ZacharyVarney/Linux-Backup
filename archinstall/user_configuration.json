@@ -240,6 +240,7 @@
         "pavucontrol",
         "firefox",
         "wine-staging",
+        "winetricks",
         "xdg-user-dirs-gtk",
         "xdg-desktop-portal-gtk",
         "openssh",
