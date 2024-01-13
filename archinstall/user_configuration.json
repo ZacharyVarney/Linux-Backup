@@ -253,7 +253,7 @@
         "tldr",
         "trash-cli"
     ],
-    "parallel downloads": 0,
+    "parallel downloads": 5,
     "script": "guided",
     "silent": false,
     "swap": true,
