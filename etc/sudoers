@@ -1,0 +1,3 @@
+# LINES ADDED TO /etc/sudoers to see sudo password feedback as asterisks
+
+Defaults env_reset,pwfeedback
