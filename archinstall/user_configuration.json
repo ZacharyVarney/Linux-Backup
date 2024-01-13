@@ -250,7 +250,8 @@
         "gvfs-mtp",
         "gvfs-afc",
         "tldr",
-        "trash-cli"
+        "trash-cli",
+        "grub-btrfs"
     ],
     "parallel downloads": 5,
     "script": "guided",
