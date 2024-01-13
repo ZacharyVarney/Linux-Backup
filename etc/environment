@@ -1,11 +1,10 @@
-#
-# This file is parsed by pam_env module
-#
-# Syntax: simple "KEY=VAL" pairs on separate lines
-#
+# LINES ADDED TO /etc/environment
 
+# ADDED WHEN USING A WAYLAND SESSION
 MOZ_ENABLE_WAYLAND=1
 QT_QPA_PLATFORM=wayland;xcb
 GDK_BACKEND=wayland,x11
+
+# ADDED ALWAYS
 LIBVA_DRIVER_NAME=radeonsi
 VDPAU_DRIVER=radeonsi
