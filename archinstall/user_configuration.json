@@ -242,6 +242,8 @@
         "pavucontrol",
         "firefox",
         "wine-staging",
+        "wine-gecko",
+        "wine-mono",
         "winetricks",
         "xdg-user-dirs-gtk",
         "xdg-desktop-portal-gtk",
