@@ -212,6 +212,8 @@
         "vulkan-headers",
         "gst-plugin-va",
         "gst-libav",
+        "gst-plugins-bad",
+        "gst-plugins-good",
         "gstreamer-vaapi",
         "openh264",
         "x265",
