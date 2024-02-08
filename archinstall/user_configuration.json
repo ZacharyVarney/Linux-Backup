@@ -211,6 +211,7 @@
         "libglvnd",
         "lib32-libglvnd",
         "vulkan-headers",
+        "vulkan-validation-layers",
         "gst-plugin-va",
         "gst-libav",
         "gstreamer-vaapi",
