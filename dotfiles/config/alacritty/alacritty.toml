@@ -1,0 +1,67 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#505050"
+blue = "#3F51B5"
+cyan = "#32d0fc"
+green = "#40a62f"
+magenta = "#b30ad0"
+red = "#b02626"
+white = "#ffffff"
+yellow = "#f2e635"
+
+[colors.dim]
+black = "#505050"
+blue = "#3F51B5"
+cyan = "#32d0fc"
+green = "#40a62f"
+magenta = "#b30ad0"
+red = "#b02626"
+white = "#ffffff"
+yellow = "#f2e635"
+
+[colors.normal]
+black = "#505050"
+blue = "#3F51B5"
+cyan = "#32d0fc"
+green = "#40a62f"
+magenta = "#b30ad0"
+red = "#b02626"
+white = "#ffffff"
+yellow = "#f2e635"
+
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+
+[cursor]
+blink_interval = 750
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+program = "/bin/fish"
+
+[window]
+dynamic_title = true
+opacity = 0.75
+title = "Alacritty"
+startup_mode = "Maximized"
+
+[window.padding]
+x = 5
+y = 5
