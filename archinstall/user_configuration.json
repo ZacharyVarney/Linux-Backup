@@ -313,7 +313,8 @@
         "grub-btrfs",
         "timeshift",
         "mangohud",
-        "goverlay"
+        "goverlay",
+        "steam"
     ],
     "parallel downloads": 5,
     "script": "guided",
