@@ -10,7 +10,7 @@
 configuration {
 	font:							"Roboto Medium 10";
     show-icons:                     true;
-	icon-theme: 					"Tela-dark";
+	icon-theme: 					"Tela-blue-dark";
     display-drun: 					"";
     display-window: 				"";
     drun-display-format:            "{name}";
@@ -42,10 +42,10 @@ window {
 
 prompt {
     enabled: 						true;
-	padding: 						0.10% 0.75% 0% -0.5%;
+	padding: 						0.00% 0.75% 0% -0.5%;
 	background-color: 				@background-alt;
 	text-color: 					@foreground;
-	font:							"FantasqueSansMono Nerd Font 10";
+	font:							"RobotoMono Nerd Font 10";
 }
 
 entry {
