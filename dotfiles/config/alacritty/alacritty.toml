@@ -22,7 +22,7 @@ white = "#ffffff"
 yellow = "#f2e635"
 
 [colors.normal]
-black = "#505050"
+black = "#111111"
 blue = "#3F51B5"
 cyan = "#32d0fc"
 green = "#40a62f"
