@@ -7,10 +7,11 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "modules-center": [
-        "hyprland/window"
+        
     ],
     "modules-right": [
         "pulseaudio",
@@ -21,11 +22,18 @@
         "tray"
     ],
 	"hyprland/workspaces": {
-	    "format": "{name}",
+	    "format": "{icon}",
 		"active-only": false,
 		"sort-by-number": false,
 		"on-click": "activate",
-		"all-outputs": false
+		"all-outputs": true,
+		"format-icons": {
+		    "1": "  ",
+		    "2": "  ",
+		    "3": "  ",
+		    "4": "  ",
+		    "5": "  ",
+ 		}
  	},
  	"hyprland/window": {
  		"format": "{title}",
@@ -92,7 +100,7 @@
         // "timezone": "America/New_York",
         "format": "{:%a %b %d, %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "on-click": "flatpak run org.gnome.Calendar"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -155,7 +163,7 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "on-click": "alacritty -e nmtui"
+        "on-click": "nm-connection-editor"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
