@@ -20,7 +20,7 @@ configuration {
 
 /* -- Breeze Light-- */
 * {
-    background:                     #111111CC;
+    background:                     #111111BF;
     background-alt:              	#00000000;
     background-bar:                 #3F51B5FF;
     foreground:                     #FFFFFFFF;
@@ -42,10 +42,10 @@ window {
 
 prompt {
     enabled: 						true;
-	padding: 						0.00% 0.75% 0% 0.0%;
+	padding: 						-0.10% 0.75% 0% -0.00%;
 	background-color: 				@background-alt;
 	text-color: 					@foreground;
-	font:							"RobotoMono Nerd Font 10";
+	font:							"RobotoMono Nerd Font 11";
 }
 
 entry {
