@@ -314,6 +314,7 @@
         "grub-btrfs",
         "timeshift",
         "mangohud",
+        "lib32-mangohud",
         "goverlay",
         "steam"
     ],
