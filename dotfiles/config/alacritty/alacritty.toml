@@ -28,7 +28,7 @@ cyan = "#32d0fc"
 green = "#40a62f"
 magenta = "#b30ad0"
 red = "#b02626"
-white = "#ffffff"
+white = "#e0e0e0"
 yellow = "#f2e635"
 
 [colors.primary]
