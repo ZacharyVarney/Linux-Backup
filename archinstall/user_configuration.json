@@ -313,6 +313,7 @@
         "trash-cli",
         "grub-btrfs",
         "timeshift",
+        "system76-scheduler",
         "mangohud",
         "lib32-mangohud",
         "goverlay",
