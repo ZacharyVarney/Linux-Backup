@@ -7,5 +7,5 @@ if status is-interactive
 
     alias cat="bat"
 
-    alias wine-reset="sudo bash /home/zach/Documents/wine-reset.sh"
+    alias wine-reset="sudo bash /home/zach/.scripts/wine-reset.sh"
 end
