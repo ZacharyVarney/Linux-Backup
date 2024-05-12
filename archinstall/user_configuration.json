@@ -317,7 +317,8 @@
         "mangohud",
         "lib32-mangohud",
         "goverlay",
-        "steam"
+        "steam",
+        "fastfetch"
     ],
     "parallel downloads": 5,
     "script": "guided",
