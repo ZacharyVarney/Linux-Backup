@@ -1,13 +1,13 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "source": "~/.config/fastfetch/logo-full.png",
+        // "source": "~/.config/fastfetch/logo-full.png",
         "type": "auto",
         "height": 15,
         "width": 30,
         "padding": {
-            "top": 5,
-            "left": 3
+            "top": 3,
+            "left": 3,
         }
     },
     "modules": [
@@ -23,17 +23,17 @@
         },
         {
             "type": "cpu",
-            "key": "│ ├",
+            "key": "│ ├ ",
             "keyColor": "green"
         },
         {
             "type": "gpu",
-            "key": "│ ├󰍛",
+            "key": "│ ├ ",
             "keyColor": "green"
         },
         {
             "type": "memory",
-            "key": "└ └󰑭",
+            "key": "└ └󰑭 ",
             "keyColor": "green"
         },
         {
@@ -52,22 +52,22 @@
         },
         {
             "type": "kernel",
-            "key": "│ ├",
+            "key": "│ ├ ",
             "keyColor": "yellow"
         },
         {
             "type": "bios",
-            "key": "│ ├",
+            "key": "│ ├ ",
             "keyColor": "yellow"
         },
         {
             "type": "packages",
-            "key": "│ ├󰏖",
+            "key": "│ ├󰏖 ",
             "keyColor": "yellow"
         },
         {
             "type": "shell",
-            "key": "└ └",
+            "key": "└ └ ",
             "keyColor": "yellow"
         },
         "break",
@@ -78,17 +78,17 @@
         },
         {
             "type": "wm",
-            "key": "│ ├",
+            "key": "│ ├ ",
             "keyColor": "blue"
         },
         {
             "type": "wmtheme",
-            "key": "│ ├󰉼",
+            "key": "│ ├󰉼 ",
             "keyColor": "blue"
         },
         {
             "type": "terminal",
-            "key": "└ └",
+            "key": "└ └ ",
             "keyColor": "blue"
         },
         {
