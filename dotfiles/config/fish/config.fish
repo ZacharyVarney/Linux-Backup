@@ -4,6 +4,7 @@ if status is-interactive
     starship init fish | source
 
     alias cat="bat"
-    alias wine-reset="sudo bash /home/zach/.config/scripts/wine-reset.sh"
+    alias wine-reset="bash /home/zach/.config/scripts/wine-reset.sh"
     alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+    alias update-kernel="sudo mkinitcpio -P"
 end
