@@ -6,4 +6,9 @@ if status is-interactive
     alias wine-reset="bash $HOME/Documents/Linux-Backup/dotfiles/scripts/wine-reset.sh"
     alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
     alias update-kernel="sudo mkinitcpio -P"
+    alias update-system="paru -Syu; flatpak update"
+end
+
+function sudolast
+    sudo (history --max=1)
 end
