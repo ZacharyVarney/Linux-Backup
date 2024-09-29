@@ -57,10 +57,11 @@ save_to_clipboard = true
 program = "/bin/fish"
 
 [window]
-dynamic_title = true
+dynamic_title = false
 opacity = 0.75
 title = "Alacritty"
 startup_mode = "Maximized"
+blur = true
 
 [window.padding]
 x = 10
