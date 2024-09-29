@@ -1,6 +1,7 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top", // Waybar at top layer
+    "output": ["DP-1", "HDMI-A-1"],
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 37, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
@@ -107,13 +108,13 @@
         "format": "{usage}% ",
         "tooltip": true,
         "on-click": "missioncenter",
-        "interval": 15
+        "interval": 5
     },
     "memory": {
         "format": "{used}GB ",
         "tooltip": true,
         "on-click": "missioncenter",
-        "interval": 15
+        "interval": 5
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -160,7 +161,7 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr} ",
+        "format-ethernet": "{ipaddr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
@@ -168,7 +169,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}   {format_source}",
+        "format": "{volume}% {icon}    {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
