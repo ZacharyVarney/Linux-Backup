@@ -5,22 +5,24 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 37, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 6, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
+    	"custom/mybutton",
+    	"hyprland/window"
     ],
     "modules-center": [
-        
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "pulseaudio",
         "network",
         "cpu",
         "memory",
+        "power-profiles-daemon",
         "clock",
-        "tray"
+        "tray",
+        "custom/powerbutton"
     ],
 	"hyprland/workspaces": {
 	    "format": "{icon}",
@@ -39,8 +41,23 @@
  	},
  	"hyprland/window": {
  		"format": "{title}",
- 	 	"max-length": 55,
- 		"seperate-outputs": false
+ 	 	"max-length": 50,
+ 		"seperate-outputs": false,
+ 		"icon": true,
+ 		"icon-size": 16
+ 	},
+ 	"mpris": {
+ 		"format": "{player_icon} {title}",
+ 		"format-paused": "{status_icon} {title}",
+ 		"player-icons": {
+ 			"default": " ▶ ",
+ 			"mpv": "🎵"
+ 		},
+ 		"status-icons": {
+ 			"paused": "⏸"
+ 		},
+ 		"max-length": 50
+ 		// "ignored-players": ["firefox"]
  	},
     "keyboard-state": {
         "numlock": true,
@@ -107,14 +124,14 @@
     "cpu": {
         "format": "{usage}% ",
         "tooltip": true,
-        "on-click": "missioncenter",
-        "interval": 5
+        "interval": 5,
+        "on-click": "missioncenter"
     },
     "memory": {
         "format": "{used}GB ",
         "tooltip": true,
-        "on-click": "missioncenter",
-        "interval": 5
+        "interval": 5,
+        "on-click": "missioncenter"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -149,7 +166,7 @@
     },
     "power-profiles-daemon": {
       "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip-format": "Power Profile: {profile}",
       "tooltip": true,
       "format-icons": {
         "default": "",
@@ -162,17 +179,17 @@
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "on-click": "nm-connection-editor"
+        "on-click": "alacritty -e nmtui"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}    {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": "{volume}%    {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -184,7 +201,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     },
     "custom/media": {
         "format": "{icon} {}",
@@ -197,5 +215,17 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/mybutton": {
+        "format": "\uf359",
+        "tooltip": true,
+        "tooltip-format": "App Menu",
+        "on-click": "/home/zach/.config/rofi/launchers/launcher.sh"
+    },
+	"custom/powerbutton": {
+        "format": "\uf011",
+        "tooltip": true,
+        "tooltip-format": "Power Menu",
+        "on-click": "/home/zach/.config/rofi/powermenu/powermenu.sh"
     }
 }
