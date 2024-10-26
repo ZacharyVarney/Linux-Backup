@@ -53,12 +53,12 @@ style = "Regular"
 [selection]
 save_to_clipboard = true
 
-[shell]
+[terminal.shell]
 program = "/bin/fish"
 
 [window]
 dynamic_title = false
-opacity = 0.75
+opacity = 0.80
 title = "Alacritty"
 startup_mode = "Maximized"
 blur = true
@@ -66,3 +66,5 @@ blur = true
 [window.padding]
 x = 10
 y = 10
+
+[terminal]
