@@ -22,9 +22,9 @@ configuration {
 * {
     background:                     #111111BF;
     background-alt:              	#00000000;
-    background-bar:                 #E25252FF;
+    background-bar:                 #3F51B5FF;
     foreground:                     #FFFFFFFF;
-    accent:			            	#E25252FF;
+    accent:			            	#3F51B5FF;
 }
 
 window {
@@ -34,7 +34,7 @@ window {
 	border:							0px;
 	border-color:					#E25252FF;
     border-radius:                  10px;
-	width:							38%;
+	width:							720px;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;
@@ -45,7 +45,7 @@ prompt {
 	padding: 						-0.10% 0.75% 0% -0.00%;
 	background-color: 				@background-alt;
 	text-color: 					@foreground;
-	font:							"RobotoMono Nerd Font 11";
+	font:							"RobotoMono Nerd Font 10";
 }
 
 entry {
