@@ -27,7 +27,7 @@
     width = (0, 400)
 
     # The maximum height of a single notification, excluding the frame.
-    height = 250
+    height = (0, 200)
 
     # Position the notification in the top right corner
     origin = top-right
@@ -193,7 +193,7 @@
     min_icon_size = 0
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 48
+    max_icon_size = 56
 
     # Paths to default icons.
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
