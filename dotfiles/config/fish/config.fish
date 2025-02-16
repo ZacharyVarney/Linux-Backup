@@ -12,7 +12,3 @@ end
 function sudolast
     sudo (history --max=1)
 end
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
