@@ -20,7 +20,7 @@ configuration {
     foreground:                  #FFFFFFFF;
     selected:                    #3F51B5FF;
     active:                      #3F51B5FF;
-    urgent:                      #EE4900FF;
+    urgent:                      #3F51B5FF;
 }
 
 /*
@@ -75,11 +75,11 @@ dummy {
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "   System";
+    str:                         "  System";
     padding:                     12px;
     border-radius:               5px;
     background-color:            @urgent;
-    text-color:                  @background;
+    text-color:                  @foreground;
 }
 prompt {
     enabled:                     true;

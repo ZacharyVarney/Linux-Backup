@@ -33,7 +33,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 8x8
+    offset = 4x4
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -292,14 +292,14 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#111111"
+    background = "#111111D9"
     foreground = "#ffffff"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     default_icon = ~/.config/dunst/normal.png
 
 [urgency_normal]
-    background = "#111111"
+    background = "#111111D9"
     foreground = "#ffffff"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable

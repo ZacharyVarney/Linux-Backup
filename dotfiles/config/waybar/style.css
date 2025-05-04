@@ -106,7 +106,7 @@ button:hover {
 #custom-powerbutton:hover {
 	background: inherit;
 	box-shadow: inset 0 -3px #ffffff;
-	color: #b02626;
+	color: #E25252;
 }
 
 #clock,
@@ -191,7 +191,7 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-    color: #ffffff;
+    color: #40a62f;
 }
 
 #power-profiles-daemon.balanced {
@@ -199,7 +199,7 @@ button:hover {
 }
 
 #power-profiles-daemon.power-saver {
-    color: #ffffff;
+    color: #32d0fc;
 }
 
 label:focus {

@@ -33,9 +33,10 @@
 		"format-icons": {
 		    "1": "  ",
 		    "2": "  ",
-		    "3": "  ",
-		    "4": "  ",
+		    "3": "  ",
+		    "4": "  ",
 		    "5": "  ",
+		 	"6": "  ",
  		}
  	},
  	"hyprland/window": {
@@ -116,7 +117,7 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "format": "{:%a %b %d,  %I:%M %p}",
+        "format": "{:%a %b %d  %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "on-click": "flatpak run org.gnome.Calendar"
     },
@@ -124,13 +125,13 @@
         "format": "{usage}% ",
         "tooltip": true,
         "interval": 5,
-        "on-click": "missioncenter"
+        "on-click": "resources"
     },
     "memory": {
         "format": "{used}GB ",
         "tooltip": true,
         "interval": 5,
-        "on-click": "missioncenter"
+        "on-click": "resources"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -181,7 +182,7 @@
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "on-click": "alacritty -e nmtui"
+        "on-click": "~/.config/rofi-old/misc/rofi-wifi-menu.sh"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
