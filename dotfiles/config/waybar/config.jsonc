@@ -9,12 +9,14 @@
     // Choose the order of the modules
     "modules-left": [
     	"custom/mybutton",
+    	"hyprland/workspaces",
     	"hyprland/window"
     ],
     "modules-center": [
-        "hyprland/workspaces"
+        
     ],
     "modules-right": [
+    	"custom/weather",
         "pulseaudio",
         "network",
         "cpu",
@@ -182,7 +184,8 @@
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "on-click": "~/.config/rofi-old/misc/rofi-wifi-menu.sh"
+        "on-click": "~/.config/rofi-old/misc/rofi-wifi-menu.sh",
+        "on-click-right": "nm-connection-editor"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -228,5 +231,13 @@
         "tooltip": true,
         "tooltip-format": "Power Menu",
         "on-click": "/home/zach/.config/rofi/powermenu/powermenu.sh"
+    },
+    "custom/weather": {
+        "format": "{}°",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar --ampm --mph --fahrenheit --hide-conditions",
+        "return-type": "json",
+        "on-click": "xdg-open 'https://wsaz.com/weather'"
     }
 }
