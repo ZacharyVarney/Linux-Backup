@@ -9,11 +9,10 @@
     // Choose the order of the modules
     "modules-left": [
     	"custom/mybutton",
-    	"hyprland/workspaces",
     	"hyprland/window"
     ],
     "modules-center": [
-        
+        "hyprland/workspaces"
     ],
     "modules-right": [
     	"custom/weather",
@@ -42,7 +41,7 @@
  		}
  	},
  	"hyprland/window": {
- 		"format": "{title}",
+ 		"format": "{initialTitle}",
  	 	"max-length": 50,
  		"seperate-outputs": false,
  		"icon": true,
@@ -121,7 +120,7 @@
         // "timezone": "America/New_York",
         "format": "{:%a %b %d  %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "on-click": "flatpak run org.gnome.Calendar"
+        "on-click": "alacritty -e calcurse"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -130,7 +129,7 @@
         "on-click": "resources"
     },
     "memory": {
-        "format": "{used}GB ",
+        "format": "{used:0.1f}GB ",
         "tooltip": true,
         "interval": 5,
         "on-click": "resources"
@@ -179,8 +178,8 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr} ",
+        "format-wifi": "({signalStrength}%) ",
+        "format-ethernet": "Wired ",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
