@@ -7,7 +7,6 @@ if status is-interactive
     alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
     alias update-kernel="sudo mkinitcpio -P"
     alias update-system="paru -Syu; flatpak update"
-    alias dv="cd $HOME/Documents/'Unreal Projects'/Venusian && $HOME/.diversion/bin/dv"
 end
 
 function sudolast
