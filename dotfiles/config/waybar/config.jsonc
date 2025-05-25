@@ -9,20 +9,21 @@
     // Choose the order of the modules
     "modules-left": [
     	"custom/mybutton",
-    	"hyprland/window"
+    	"hyprland/window",
+    	"mpris"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
-    	"custom/weather",
+    	"tray",
         "pulseaudio",
         "network",
         "cpu",
         "memory",
         "power-profiles-daemon",
         "clock",
-        "tray",
+        "custom/weather",
         "custom/powerbutton"
     ],
 	"hyprland/workspaces": {
@@ -48,14 +49,13 @@
  		"icon-size": 16
  	},
  	"mpris": {
- 		"format": "{player_icon} {title}",
- 		"format-paused": "{status_icon} {title}",
+ 		"format": "{player_icon}",
+ 		"format-paused": "{status_icon}",
  		"player-icons": {
- 			"default": " ▶ ",
- 			"mpv": "🎵"
+ 			"default": "   "
  		},
  		"status-icons": {
- 			"paused": "⏸"
+ 			"paused": "   "
  		},
  		"max-length": 50
  		// "ignored-players": ["firefox"]
@@ -203,7 +203,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol",
+        "on-click": "GTK_THEME=Plata-Noir pavucontrol",
         "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
