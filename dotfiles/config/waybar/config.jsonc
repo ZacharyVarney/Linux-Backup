@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top", // Waybar at top layer
-    "output": ["DP-1", "HDMI-A-1"],
+    "output": ["DP-1"],
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 37, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
@@ -9,8 +9,7 @@
     // Choose the order of the modules
     "modules-left": [
     	"custom/mybutton",
-    	"hyprland/window",
-    	"mpris"
+    	"hyprland/window"
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -24,7 +23,7 @@
         "power-profiles-daemon",
         "clock",
         "custom/weather",
-        "custom/powerbutton"
+        "custom/notification"
     ],
 	"hyprland/workspaces": {
 	    "format": "{icon}",
@@ -38,7 +37,6 @@
 		    "3": "  ",
 		    "4": "  ",
 		    "5": "  ",
-		 	"6": "  ",
  		}
  	},
  	"hyprland/window": {
@@ -126,13 +124,13 @@
         "format": "{usage}% ",
         "tooltip": true,
         "interval": 5,
-        "on-click": "resources"
+        "on-click": "missioncenter"
     },
     "memory": {
         "format": "{used:0.1f}GB ",
         "tooltip": true,
         "interval": 5,
-        "on-click": "resources"
+        "on-click": "missioncenter"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -188,7 +186,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}    {format_source}",
+        "format": "{volume}% {icon}     {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": "{volume}%    {format_source}",
@@ -238,5 +236,25 @@
         "exec": "wttrbar --ampm --mph --fahrenheit --hide-conditions",
         "return-type": "json",
         "on-click": "xdg-open 'https://wsaz.com/weather'"
+    },
+    "custom/notification": {
+      "tooltip": false,
+      "format": "{} {icon}",
+      "format-icons": {
+        "notification": " 󰂚 ",
+        "none": " 󰂚 ",
+        "dnd-notification": " 󰂛 ",
+        "dnd-none": " 󰂛 ",
+        "inhibited-notification": " 󰂚 ",
+        "inhibited-none": " 󰂚 ",
+        "dnd-inhibited-notification": " 󰂛 ",
+        "dnd-inhibited-none": " 󰂛 "
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
     }
 }

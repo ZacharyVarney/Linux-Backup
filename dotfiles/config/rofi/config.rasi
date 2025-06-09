@@ -15,7 +15,7 @@ configuration {
 	scroll-method: 0;
 	normalize-match: true;
 	show-icons: true;
-	icon-theme: "Papirus-Dark";
+	icon-theme: "Tela-blue-dark";
 /*	cache-dir: ;*/
 	steal-focus: false;
 /*	dpi: -1;*/

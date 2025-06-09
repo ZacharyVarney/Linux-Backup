@@ -2,7 +2,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Roboto, sans-serif;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 14px;
     min-height: 0;
 }
 
@@ -109,6 +109,11 @@ button:hover {
 	color: #E25252;
 }
 
+#custom-notification {
+	font-family: "NotoSansMono Nerd Font";
+	padding-left: 5px;
+}
+
 #clock,
 #battery,
 #cpu,
@@ -137,7 +142,6 @@ button:hover {
 #window {
 	font-family: Roboto;
 	font-weight: bold;
-	font-size: 13px;
 	padding-left: 15px;
 }
 
@@ -191,7 +195,7 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-    color: #40a62f;
+    color: #ffffff;
 }
 
 #power-profiles-daemon.balanced {
@@ -199,7 +203,7 @@ button:hover {
 }
 
 #power-profiles-daemon.power-saver {
-    color: #32d0fc;
+    color: #ffffff;
 }
 
 label:focus {
