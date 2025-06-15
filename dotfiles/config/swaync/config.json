@@ -49,37 +49,48 @@
     "dnd": {
       "text": "Do Not Disturb"
     },
-    "buttons-grid": {
-      "actions": [
-        {
-           "label": "  ",
-           "command": "systemctl reboot"
-        },
-        {
-           "label": "  ",
-           "command": "systemctl poweroff"
-        },
-        {
-           "label": "  ",
-           "command": "systemctl suspend"
-        },
-        {
-           "label": "  ",
-           "command": "hyprlock"
-        },
-        {
-           "label": "  ",
-           "command": "hyprctl dispatch exit"
+    "menubar#label": {
+          "menu#power-buttons": {
+            "label": "", 
+            "position": "right",
+            "actions": [ 
+              {
+                "label": "   Reboot",
+                "command": "systemctl reboot"
+              },
+              {
+                "label": "   Lock",
+                "command": "hyprlock"
+              },
+              {
+                "label": "   Logout",
+                "command": "hyprctl dispatch exit"
+              },
+              {
+                "label": "   Shut Down",
+                "command": "systemctl poweroff"
+              }
+            ]
+          },
+          "buttons#topbar-buttons": {
+            "position": "left",
+            "actions": [
+              {
+                "label": "",
+                "command": "hyprshot -m region -o $HOME/Pictures/Screenshots/"
+              }
+            ]
+          }
         }
+      },
+      "widgets": [
+          "menubar#label",
+          "mpris",
+          "title",
+          "dnd",
+          "notifications"
       ]
-    }
-},
-
-  "widgets": [
-    "mpris",
-    "title",
-    "dnd",
-    "notifications"
-  ]
 }
+
+
 

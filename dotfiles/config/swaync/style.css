@@ -68,7 +68,7 @@
 
 .control-center .notification-row .notification-background .notification.critical .notification-content,
 .floating-notifications.background .notification-background .notification.critical .notification-content {
-  background-color: #ffffff;
+  color: #ffffff;
 }
 
 .control-center .notification-row .notification-background .notification.critical .notification-content image,
@@ -298,4 +298,18 @@
 .widget-dnd>switch:checked {
   background: #3F51B5;
   border: 1px solid #3F51B5;
+}
+
+.power-buttons {
+  border-radius: 1.159rem;
+}
+
+.power-buttons>button {
+  background: transparent;
+  padding: 2px 0px;
+  border: none;
+}
+
+.power-buttons>button:hover {
+  background: #3F51B5;
 }
