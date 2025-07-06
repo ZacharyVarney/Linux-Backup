@@ -10,7 +10,7 @@
 configuration {
 	font:							"Roboto Medium 10";
     show-icons:                     true;
-	icon-theme: 					"Papirus-Dark";
+	icon-theme: 					"Tela-blue-dark";
     display-drun: 					"";
     display-window: 				"";
     drun-display-format:            "{name}";

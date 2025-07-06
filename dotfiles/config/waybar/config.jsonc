@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top", // Waybar at top layer
-    "output": ["DP-1"],
+    "output": ["DP-1", "DP-2"],
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 37, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
@@ -175,11 +175,10 @@
       }
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
+    	//"format": "",
         "format-wifi": "({signalStrength}%) ",
         "format-ethernet": "Wired ",
         "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "on-click": "~/.config/rofi-old/misc/rofi-wifi-menu.sh",
         "on-click-right": "nm-connection-editor"
@@ -202,8 +201,10 @@
             "default": ["", "", ""]
         },
         "on-click": "GTK_THEME=Plata-Noir pavucontrol",
-        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        "on-click-right": "swayosd-client --input-volume mute-toggle",
+        "on-click-middle": "swayosd-client --output-volume mute-toggle",
+        "on-scroll-up": "swayosd-client --output-volume 5",
+        "on-scroll-down": "swayosd-client --output-volume -5"
     },
     "custom/media": {
         "format": "{icon} {}",
