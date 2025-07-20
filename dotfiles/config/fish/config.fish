@@ -9,6 +9,6 @@ if status is-interactive
     alias update-system="paru -Syu; flatpak update"
 end
 
-function sudolast
+function sudol
     sudo (history --max=1)
 end
