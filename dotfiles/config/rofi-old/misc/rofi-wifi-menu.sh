@@ -12,7 +12,7 @@ elif [[ "$connected" =~ "disabled" ]]; then
 fi
 
 # Use rofi to select wifi network
-chosen_network=$(echo -e "$toggle\n$wifi_list" | uniq -u | rofi -theme $HOME/.config/rofi-old/misc/kde_krunner.rasi -dmenu -i -selected-row 1 -p "Wi-Fi SSID: " )
+chosen_network=$(echo -e "$toggle\n$wifi_list" | uniq -u | rofi -theme /home/zach/.config/rofi-old/misc/kde_krunner.rasi -dmenu -i -selected-row 1 -p "Wi-Fi SSID: " )
 # Get name of connection
 read -r chosen_id <<< "${chosen_network:3}"
 

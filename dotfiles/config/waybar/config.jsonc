@@ -16,6 +16,7 @@
     ],
     "modules-right": [
     	"tray",
+    	"custom/hyprsunset",
         "pulseaudio",
         "network",
         "cpu",
@@ -32,12 +33,10 @@
 		"on-click": "activate",
 		"all-outputs": true,
 		"format-icons": {
-		    "1": "  ",
-		    "2": "  ",
-		    "3": "  ",
-		    "4": "  ",
-		    "5": "  ",
- 		}
+			"active": "●",
+			"default": "●",
+			"empty": "○"
+		},
  	},
  	"hyprland/window": {
  		"format": "{initialTitle}",
@@ -175,7 +174,7 @@
       }
     },
     "network": {
-    	//"format": "",
+    	// "format": "",
         "format-wifi": "({signalStrength}%) ",
         "format-ethernet": "Wired ",
         "tooltip-format": "{ifname} via {gwaddr}",
@@ -190,7 +189,7 @@
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": "{volume}%    {format_source}",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source-muted": "0% ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -222,13 +221,13 @@
         "format": "\uf359",
         "tooltip": true,
         "tooltip-format": "App Menu",
-        "on-click": "/home/zach/.config/rofi/launchers/launcher.sh"
+        "on-click": "~/.config/rofi/launchers/launcher.sh"
     },
 	"custom/powerbutton": {
         "format": "\uf011",
         "tooltip": true,
         "tooltip-format": "Power Menu",
-        "on-click": "/home/zach/.config/rofi/powermenu/powermenu.sh"
+        "on-click": "~/.config/rofi/powermenu/powermenu.sh"
     },
     "custom/weather": {
         "format": "{}°",
@@ -239,7 +238,8 @@
         "on-click": "xdg-open 'https://wsaz.com/weather'"
     },
     "custom/notification": {
-      "tooltip": false,
+      "tooltip": true,
+      "tooltip-format": "Notification Center",
       "format": "{} {icon}",
       "format-icons": {
         "notification": " 󰂚 ",
@@ -257,5 +257,12 @@
       "on-click": "swaync-client -t -sw",
       "on-click-right": "swaync-client -d -sw",
       "escape": true
+    },
+    "custom/hyprsunset": {
+    	"exec": "~/.config/hypr/hyprsunset.sh",
+        "interval": 60,
+        "return-type": "json",
+        "tooltip": true,
+        "tooltip-format": "Hyprsunset Status"
     }
 }

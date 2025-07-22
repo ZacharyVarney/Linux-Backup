@@ -1,5 +1,4 @@
 {
-  "$schema": "$XDG_CONFIG_HOME/swaync/configSchema.json",
   "control-center-height": 2,
   "control-center-layer": "overlay",
   "control-center-margin-bottom": 20,

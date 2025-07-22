@@ -14,10 +14,12 @@
 .floating-notifications .notification-row .notification-background .notification,
 .floating-notifications.background .notification-background .notification .notification-content {
   margin-bottom: unset;
+  border: 1px;
 }
 
 .control-center .notification-row .notification-background .notification {
   margin-top: 0.150rem;
+  border: 1px;
 }
 
 .control-center .notification-row .notification-background .notification box,
@@ -26,10 +28,7 @@
 .floating-notifications .notification-row .notification-background .notification box,
 .floating-notifications .notification-row .notification-background .notification widget,
 .floating-notifications.background .notification-background .notification .notification-content {
-  border: unset;
-  border-radius: 1.159rem;
-  -gtk-outline-radius: 1.159rem;
-  
+  border: none;
 }
 
 .floating-notifications.background .notification-background .notification .notification-content,
@@ -280,11 +279,6 @@
   -gtk-outline-radius: 1.159rem;  
 }
 
-.widget-mpris-player {
-  padding: 8px;
-  margin: 8px;
-}
-
 .widget-mpris-title {
   font-weight: bold;
   font-size: 1.25rem;
@@ -298,6 +292,8 @@
 .widget-dnd>switch:checked {
   background: #3F51B5;
   border: 1px solid #3F51B5;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .power-buttons {
