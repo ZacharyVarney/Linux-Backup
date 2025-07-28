@@ -1,4 +1,3 @@
-
 version = 1
 [global]
 # override the location of Lossless Scaling
@@ -18,24 +17,26 @@ version = 1
 
 [[game]] # default vkcube entry
 exe = "vkcube"
-
 multiplier = 4
 performance_mode = true
 
 [[game]] # default benchmark entry
 exe = "benchmark"
-
 multiplier = 4
 performance_mode = false
 
 [[game]] # Elden Ring Nightreign
 exe = "nightreign.exe"
-
 multiplier = 2
 performance_mode = false
 
 [[game]] # Dolphin-emu
 exe = "dolphin-emu"
-
 multiplier = 2
 performance_mode = false
+
+[[game]] # MPV
+exe = "video"
+multiplier = 2
+performance_mode = false
+hdr_mode = false

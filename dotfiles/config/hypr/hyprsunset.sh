@@ -9,7 +9,7 @@ if ([ "$START_HOUR" -le "$END_HOUR" ] && [ "$CURRENT_HOUR" -ge "$START_HOUR" ] &
    ([ "$START_HOUR" -gt "$END_HOUR" ] && ( [ "$CURRENT_HOUR" -ge "$START_HOUR" ] || [ "$CURRENT_HOUR" -lt "$END_HOUR" ] )); then
     if ! pgrep -x "hyprsunset" >/dev/null; then
     	echo '{"text":"   On"}'
-        nohup hyprsunset --gamma 100 --gamma_max 100 --temperature 3500 >/dev/null 2>&1 &
+        nohup hyprsunset --gamma 100 --gamma_max 100 --temperature 3300 >/dev/null 2>&1 &
     else
         echo '{"text":"   On"}'
     fi
