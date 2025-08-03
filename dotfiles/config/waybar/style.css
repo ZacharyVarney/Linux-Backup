@@ -110,7 +110,8 @@ button:hover {
 
 #custom-notification {
 	font-family: "NotoSansMono Nerd Font";
-	padding-left: 6px;
+	padding-left: 8px;
+	padding-right: 3px;
 }
 
 #custom-hyprsunset {
