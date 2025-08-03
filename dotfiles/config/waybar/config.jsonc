@@ -9,10 +9,12 @@
     // Choose the order of the modules
     "modules-left": [
     	"custom/mybutton",
+    	"hyprland/workspaces",
     	"hyprland/window"
     ],
     "modules-center": [
-        "hyprland/workspaces"
+        "clock",
+        "custom/weather"
     ],
     "modules-right": [
     	"tray",
@@ -22,8 +24,6 @@
         "cpu",
         "memory",
         "power-profiles-daemon",
-        "clock",
-        "custom/weather",
         "custom/notification"
     ],
 	"hyprland/workspaces": {
