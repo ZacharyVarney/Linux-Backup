@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script is currently used when wanting tearing because VRR & allow_tearing does not work good together.
+
 # Apply new settings
 hyprctl keyword general:allow_tearing true
 hyprctl keyword cursor:no_hardware_cursors 1
