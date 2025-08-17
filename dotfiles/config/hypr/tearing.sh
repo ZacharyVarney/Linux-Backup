@@ -8,7 +8,7 @@ hyprctl keyword cursor:no_hardware_cursors 1
 hyprctl keyword misc:vrr 0
 notify-send "Tearing Script" "Tearing Activated, VRR Disabled"
 
-# Launch game (replace with actual launch command)
+# Listen to game process
 "$@"
 
 # Restore original settings
