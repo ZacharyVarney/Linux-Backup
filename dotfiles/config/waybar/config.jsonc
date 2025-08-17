@@ -116,7 +116,7 @@
     "clock": {
         // "timezone": "America/New_York",
         "format": "{:%a %b %d  %I:%M %p}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "on-click": "alacritty -e calcurse"
     },
     "cpu": {
@@ -199,7 +199,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "GTK_THEME=Plata-Noir pavucontrol",
+        "on-click": "GTK_THEME=Materia-dark pavucontrol",
         "on-click-right": "swayosd-client --input-volume mute-toggle",
         "on-click-middle": "swayosd-client --output-volume mute-toggle",
         "on-scroll-up": "swayosd-client --output-volume 5",
@@ -263,6 +263,7 @@
         "interval": 60,
         "return-type": "json",
         "tooltip": true,
-        "tooltip-format": "Hyprsunset Status"
+        "on-click": "sed -i 's/^ENABLED=.*/ENABLED=1/' ~/.config/hypr/hyprsunset.sh",
+        "on-click-right": "sed -i 's/^ENABLED=.*/ENABLED=0/' ~/.config/hypr/hyprsunset.sh"
     }
 }

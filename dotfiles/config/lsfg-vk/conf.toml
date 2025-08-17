@@ -1,42 +1,59 @@
 version = 1
+
 [global]
-# override the location of Lossless Scaling
-# dll = "/games/Lossless Scaling"
 
-# [[game]] # example entry
-# exe = "Game.exe"
-# env = "SteamDeck=0"
-#
-# multiplier = 3
-# flow_scale = 0.7
-# performance_mode = true
-# hdr_mode = false
-#
-# experimental_present_mode = "fifo"
-# experimental_fps_limit = 48
-
-[[game]] # default vkcube entry
-exe = "vkcube"
-multiplier = 4
-performance_mode = true
-
-[[game]] # default benchmark entry
-exe = "benchmark"
-multiplier = 4
-performance_mode = false
-
-[[game]] # Elden Ring Nightreign
-exe = "nightreign.exe"
+[[game]]
+exe = "PPSSPPSDL"
 multiplier = 2
-performance_mode = false
-
-[[game]] # Dolphin-emu
-exe = "dolphin-emu"
-multiplier = 2
-performance_mode = false
-
-[[game]] # MPV
-exe = "video"
-multiplier = 2
+flow_scale = 1.0
 performance_mode = false
 hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "benchmark"
+multiplier = 4
+flow_scale = 1.0
+performance_mode = false
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "dolphin-emu"
+multiplier = 2
+flow_scale = 1.0
+performance_mode = false
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "mpv"
+multiplier = 2
+flow_scale = 1.0
+performance_mode = false
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "nightreign.exe"
+multiplier = 2
+flow_scale = 1.0
+performance_mode = false
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "pcsx2"
+multiplier = 2
+flow_scale = 1.0
+performance_mode = false
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "rpcs3"
+multiplier = 2
+flow_scale = 1.0
+performance_mode = false
+hdr_mode = false
+experimental_present_mode = "fifo"
