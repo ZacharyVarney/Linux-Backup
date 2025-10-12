@@ -119,6 +119,14 @@
   text-shadow: none;
 }
 
+.control-center .notification-group,
+.control-center .notification-group-contents,
+.control-center .notification-row .notification-background {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
 .control-center .notification-row .close-button:hover,
 .floating-notifications.background .close-button:hover {
   background-color: rgba(255, 255, 255, 0.15);
@@ -302,7 +310,7 @@
 
 .power-buttons>button {
   background: transparent;
-  padding: 2px 0px;
+  padding: 5px 5px 10px 5px;
   border: none;
 }
 

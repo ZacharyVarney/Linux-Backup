@@ -179,7 +179,7 @@
         "format-ethernet": "Wired ",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-disconnected": "Disconnected ⚠",
-        "on-click": "~/.config/rofi-old/misc/rofi-wifi-menu.sh",
+        "on-click": "alacritty -e nmtui",
         "on-click-right": "nm-connection-editor"
     },
     "pulseaudio": {
@@ -221,7 +221,7 @@
         "format": "\uf359",
         "tooltip": true,
         "tooltip-format": "App Menu",
-        "on-click": "~/.config/rofi/launchers/launcher.sh"
+        "on-click": "walker"
     },
 	"custom/powerbutton": {
         "format": "\uf011",
@@ -233,7 +233,7 @@
         "format": "{}°",
         "tooltip": true,
         "interval": 3600,
-        "exec": "wttrbar --ampm --mph --fahrenheit --hide-conditions",
+        "exec": "wttrbar --ampm --mph --fahrenheit --hide-conditions --location Lexington+Kentucky",
         "return-type": "json",
         "on-click": "xdg-open 'https://wsaz.com/weather'"
     },
