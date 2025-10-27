@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ENABLED=1
+ENABLED=0
 START_HOUR=23
 END_HOUR=8
 CURRENT_HOUR=$(date +%H)

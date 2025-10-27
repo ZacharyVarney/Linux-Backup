@@ -58,7 +58,7 @@ program = "/bin/fish"
 
 [window]
 dynamic_title = false
-opacity = 0.80
+opacity = 0.85
 title = "Alacritty"
 startup_mode = "Maximized"
 blur = true

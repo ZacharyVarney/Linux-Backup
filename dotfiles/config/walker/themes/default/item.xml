@@ -6,7 +6,15 @@
       <class name="item-box"></class>
     </style>
     <property name="orientation">horizontal</property>
-    <property name="spacing">10</property>
+    <property name="spacing">0</property>
+    <child>
+      <object class="GtkLabel" id="ItemImageFont">
+        <style>
+          <class name="item-image-text"></class>
+        </style>
+        <property name="width-chars">2</property>
+      </object>
+    </child>
     <child>
       <object class="GtkImage" id="ItemImage">
         <style>
@@ -41,7 +49,7 @@
             <style>
               <class name="item-subtext"></class>
             </style>
-            <property name="wrap">false</property>
+            <property name="wrap">true</property>
             <property name="vexpand_set">true</property>
             <property name="vexpand">true</property>
             <property name="xalign">0</property>
