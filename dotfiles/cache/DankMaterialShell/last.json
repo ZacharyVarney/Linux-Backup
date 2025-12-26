@@ -1,0 +1,379 @@
+{
+  "colors": {
+    "background": {
+      "dark": "#101418",
+      "default": "#101418",
+      "light": "#f7f9ff"
+    },
+    "error": {
+      "dark": "#ffb4ab",
+      "default": "#ffb4ab",
+      "light": "#ba1a1a"
+    },
+    "error_container": {
+      "dark": "#93000a",
+      "default": "#93000a",
+      "light": "#ffdad6"
+    },
+    "inverse_on_surface": {
+      "dark": "#2d3135",
+      "default": "#2d3135",
+      "light": "#eef1f6"
+    },
+    "inverse_primary": {
+      "dark": "#2f628c",
+      "default": "#2f628c",
+      "light": "#9bcbfa"
+    },
+    "inverse_surface": {
+      "dark": "#e0e2e8",
+      "default": "#e0e2e8",
+      "light": "#2d3135"
+    },
+    "on_background": {
+      "dark": "#e0e2e8",
+      "default": "#e0e2e8",
+      "light": "#181c20"
+    },
+    "on_error": {
+      "dark": "#690005",
+      "default": "#690005",
+      "light": "#ffffff"
+    },
+    "on_error_container": {
+      "dark": "#ffdad6",
+      "default": "#ffdad6",
+      "light": "#410002"
+    },
+    "on_primary": {
+      "dark": "#003353",
+      "default": "#003353",
+      "light": "#ffffff"
+    },
+    "on_primary_container": {
+      "dark": "#cee5ff",
+      "default": "#cee5ff",
+      "light": "#001d32"
+    },
+    "on_primary_fixed": {
+      "dark": "#001d32",
+      "default": "#001d32",
+      "light": "#001d32"
+    },
+    "on_primary_fixed_variant": {
+      "dark": "#0d4a73",
+      "default": "#0d4a73",
+      "light": "#0d4a73"
+    },
+    "on_secondary": {
+      "dark": "#233240",
+      "default": "#233240",
+      "light": "#ffffff"
+    },
+    "on_secondary_container": {
+      "dark": "#d5e4f7",
+      "default": "#d5e4f7",
+      "light": "#0e1d2a"
+    },
+    "on_secondary_fixed": {
+      "dark": "#0e1d2a",
+      "default": "#0e1d2a",
+      "light": "#0e1d2a"
+    },
+    "on_secondary_fixed_variant": {
+      "dark": "#3a4857",
+      "default": "#3a4857",
+      "light": "#3a4857"
+    },
+    "on_surface": {
+      "dark": "#e0e2e8",
+      "default": "#e0e2e8",
+      "light": "#181c20"
+    },
+    "on_surface_variant": {
+      "dark": "#c2c7cf",
+      "default": "#c2c7cf",
+      "light": "#42474e"
+    },
+    "on_tertiary": {
+      "dark": "#382a49",
+      "default": "#382a49",
+      "light": "#ffffff"
+    },
+    "on_tertiary_container": {
+      "dark": "#eedbff",
+      "default": "#eedbff",
+      "light": "#231533"
+    },
+    "on_tertiary_fixed": {
+      "dark": "#231533",
+      "default": "#231533",
+      "light": "#231533"
+    },
+    "on_tertiary_fixed_variant": {
+      "dark": "#4f4061",
+      "default": "#4f4061",
+      "light": "#4f4061"
+    },
+    "outline": {
+      "dark": "#8c9198",
+      "default": "#8c9198",
+      "light": "#72777f"
+    },
+    "outline_variant": {
+      "dark": "#42474e",
+      "default": "#42474e",
+      "light": "#c2c7cf"
+    },
+    "primary": {
+      "dark": "#9bcbfa",
+      "default": "#9bcbfa",
+      "light": "#2f628c"
+    },
+    "primary_container": {
+      "dark": "#0d4a73",
+      "default": "#0d4a73",
+      "light": "#cee5ff"
+    },
+    "primary_fixed": {
+      "dark": "#cee5ff",
+      "default": "#cee5ff",
+      "light": "#cee5ff"
+    },
+    "primary_fixed_dim": {
+      "dark": "#9bcbfa",
+      "default": "#9bcbfa",
+      "light": "#9bcbfa"
+    },
+    "scrim": {
+      "dark": "#000000",
+      "default": "#000000",
+      "light": "#000000"
+    },
+    "secondary": {
+      "dark": "#b9c8da",
+      "default": "#b9c8da",
+      "light": "#51606f"
+    },
+    "secondary_container": {
+      "dark": "#3a4857",
+      "default": "#3a4857",
+      "light": "#d5e4f7"
+    },
+    "secondary_fixed": {
+      "dark": "#d5e4f7",
+      "default": "#d5e4f7",
+      "light": "#d5e4f7"
+    },
+    "secondary_fixed_dim": {
+      "dark": "#b9c8da",
+      "default": "#b9c8da",
+      "light": "#b9c8da"
+    },
+    "shadow": {
+      "dark": "#000000",
+      "default": "#000000",
+      "light": "#000000"
+    },
+    "source_color": {
+      "dark": "#2c5374",
+      "default": "#2c5374",
+      "light": "#2c5374"
+    },
+    "surface": {
+      "dark": "#101418",
+      "default": "#101418",
+      "light": "#f7f9ff"
+    },
+    "surface_bright": {
+      "dark": "#36393e",
+      "default": "#36393e",
+      "light": "#f7f9ff"
+    },
+    "surface_container": {
+      "dark": "#1c2024",
+      "default": "#1c2024",
+      "light": "#eceef3"
+    },
+    "surface_container_high": {
+      "dark": "#272a2f",
+      "default": "#272a2f",
+      "light": "#e6e8ee"
+    },
+    "surface_container_highest": {
+      "dark": "#323539",
+      "default": "#323539",
+      "light": "#e0e2e8"
+    },
+    "surface_container_low": {
+      "dark": "#181c20",
+      "default": "#181c20",
+      "light": "#f1f3f9"
+    },
+    "surface_container_lowest": {
+      "dark": "#0b0f12",
+      "default": "#0b0f12",
+      "light": "#ffffff"
+    },
+    "surface_dim": {
+      "dark": "#101418",
+      "default": "#101418",
+      "light": "#d8dae0"
+    },
+    "surface_tint": {
+      "dark": "#9bcbfa",
+      "default": "#9bcbfa",
+      "light": "#2f628c"
+    },
+    "surface_variant": {
+      "dark": "#42474e",
+      "default": "#42474e",
+      "light": "#dee3eb"
+    },
+    "tertiary": {
+      "dark": "#d3bfe6",
+      "default": "#d3bfe6",
+      "light": "#68587a"
+    },
+    "tertiary_container": {
+      "dark": "#4f4061",
+      "default": "#4f4061",
+      "light": "#eedbff"
+    },
+    "tertiary_fixed": {
+      "dark": "#eedbff",
+      "default": "#eedbff",
+      "light": "#eedbff"
+    },
+    "tertiary_fixed_dim": {
+      "dark": "#d3bfe6",
+      "default": "#d3bfe6",
+      "light": "#d3bfe6"
+    }
+  },
+  "image": "/home/zach/Documents/Linux-Backup/Wallpapers/wallhaven-9mxyqw.jpg",
+  "is_dark_mode": true,
+  "mode": "dark",
+  "palettes": {
+    "error": {
+      "0": "#000000",
+      "10": "#410002",
+      "100": "#ffffff",
+      "15": "#540003",
+      "20": "#690005",
+      "25": "#7e0007",
+      "30": "#93000a",
+      "35": "#a80710",
+      "40": "#ba1a1a",
+      "5": "#2d0001",
+      "50": "#de3730",
+      "60": "#ff5449",
+      "70": "#ff897d",
+      "80": "#ffb4ab",
+      "90": "#ffdad6",
+      "95": "#ffedea",
+      "98": "#fff8f7",
+      "99": "#fffbff"
+    },
+    "neutral": {
+      "0": "#000000",
+      "10": "#1a1c1e",
+      "100": "#ffffff",
+      "15": "#242628",
+      "20": "#2f3033",
+      "25": "#3a3b3e",
+      "30": "#45474a",
+      "35": "#515255",
+      "40": "#5d5e61",
+      "5": "#0f1113",
+      "50": "#76777a",
+      "60": "#909194",
+      "70": "#aaabae",
+      "80": "#c6c6c9",
+      "90": "#e2e2e5",
+      "95": "#f0f0f4",
+      "98": "#f9f9fc",
+      "99": "#fcfcff"
+    },
+    "neutral_variant": {
+      "0": "#000000",
+      "10": "#171c22",
+      "100": "#ffffff",
+      "15": "#21262c",
+      "20": "#2c3137",
+      "25": "#373c42",
+      "30": "#42474e",
+      "35": "#4e535a",
+      "40": "#595f66",
+      "5": "#0c1117",
+      "50": "#72777f",
+      "60": "#8c9198",
+      "70": "#a7acb3",
+      "80": "#c2c7cf",
+      "90": "#dee3eb",
+      "95": "#ecf1f9",
+      "98": "#f7f9ff",
+      "99": "#fcfcff"
+    },
+    "primary": {
+      "0": "#000000",
+      "10": "#001d32",
+      "100": "#ffffff",
+      "15": "#002842",
+      "20": "#003353",
+      "25": "#003e64",
+      "30": "#004a76",
+      "35": "#005688",
+      "40": "#00639a",
+      "5": "#001222",
+      "50": "#217cbb",
+      "60": "#4596d7",
+      "70": "#64b1f3",
+      "80": "#96ccff",
+      "90": "#cee5ff",
+      "95": "#e8f2ff",
+      "98": "#f7f9ff",
+      "99": "#fcfcff"
+    },
+    "secondary": {
+      "0": "#000000",
+      "10": "#0e1d2a",
+      "100": "#ffffff",
+      "15": "#192735",
+      "20": "#233240",
+      "25": "#2e3d4b",
+      "30": "#3a4857",
+      "35": "#455463",
+      "40": "#51606f",
+      "5": "#03121f",
+      "50": "#6a7989",
+      "60": "#8392a3",
+      "70": "#9eadbe",
+      "80": "#b9c8da",
+      "90": "#d5e4f7",
+      "95": "#e8f2ff",
+      "98": "#f7f9ff",
+      "99": "#fcfcff"
+    },
+    "tertiary": {
+      "0": "#000000",
+      "10": "#231533",
+      "100": "#ffffff",
+      "15": "#2d1f3e",
+      "20": "#382a49",
+      "25": "#443555",
+      "30": "#4f4061",
+      "35": "#5b4c6d",
+      "40": "#68587a",
+      "5": "#170a28",
+      "50": "#817094",
+      "60": "#9c89af",
+      "70": "#b7a4ca",
+      "80": "#d3bfe6",
+      "90": "#eedbff",
+      "95": "#f9edff",
+      "98": "#fff7ff",
+      "99": "#fffbff"
+    }
+  }
+}
