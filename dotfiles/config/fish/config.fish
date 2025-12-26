@@ -12,3 +12,8 @@ end
 function sudolast
     sudo (history --max=1)
 end
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/zach/.lmstudio/bin
+# End of LM Studio CLI section
+
