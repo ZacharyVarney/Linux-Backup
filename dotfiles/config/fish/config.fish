@@ -7,13 +7,9 @@ if status is-interactive
     alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
     alias update-kernel="sudo mkinitcpio -P"
     alias update-system="paru -Syu; flatpak update"
+    alias yay="paru"
 end
 
 function sudolast
     sudo (history --max=1)
 end
-
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH /home/zach/.lmstudio/bin
-# End of LM Studio CLI section
-
