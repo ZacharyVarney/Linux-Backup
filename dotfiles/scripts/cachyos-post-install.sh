@@ -16,7 +16,7 @@ mkdir -p $HOME/.local/share/themes
 sudo cp -r /usr/share/themes/BreezeX-Light $HOME/.local/share/icons/
 sudo cp -r /usr/share/themes/BreezeX-Dark $HOME/.local/share/icons/
 sudo cp -r /usr/share/themes/BreezeX-Black $HOME/.local/share/icons/
-paru -Rns breezex-cursor-theme
+paru -Rns breezex-cursor-theme --noconfirm
 
 flatpak install protonplus flatseal
 
