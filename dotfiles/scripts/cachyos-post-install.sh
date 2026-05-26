@@ -9,7 +9,7 @@ hyprland-guiutils-git hyprland-protocols-git hyprland-qt-support-git hyprlang-gi
 hyprpolkitagent hyprtoolkit-git hyprwayland-scanner-git hyprwire-git xdg-desktop-portal-hyprland-git \ 
 dms-shell-git dsearch-bin greetd-dms-greeter-git pavucontrol-qt quickshell-git qt6ct-kde \ 
 adw-gtk-theme breeze breeze-icons breeze5 breeze-cursors breezex-cursor-theme mission-center yazi \ 
-discord lsfg-vk nvtop bazecor openrazer-daemon-dkms polychromatic
+discord lsfg-vk nvtop bazecor openrazer-daemon-dkms polychromatic qt5ct
 
 mkdir -p $HOME/.local/share/icons
 mkdir -p $HOME/.local/share/themes
