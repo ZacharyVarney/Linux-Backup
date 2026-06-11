@@ -33,7 +33,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "dms ipc call spotlight toggle"
+local menu        = "dms ipc call spotlight-bar toggle"
 local browser 	  = "brave-origin-beta"
 local sysMonitor  = "missioncenter"
 
@@ -52,12 +52,11 @@ local sysMonitor  = "missioncenter"
    hl.exec_cmd("systemctl --user start hyprpolkitagent")
    hl.exec_cmd("systemctl --user set-environment")
    hl.exec_cmd("systemctl --user import-environment")
-   hl.exec_cmd("hyprctl setcursor BreezeX-Light 24")
+   hl.exec_cmd("hyprctl setcursor Breeze_Light 24")
    hl.exec_cmd("kbuildsycoca6 --noincremental")
    hl.exec_cmd("$HOME/.config/hypr/hyprdesktop.sh")
    hl.exec_cmd("bash -c 'wl-paste --watch cliphist store &'")
    hl.exec_cmd("dms run")
-   hl.exec_cmd("gsr-ui launch-daemon")
  end)
 
 
@@ -69,7 +68,7 @@ local sysMonitor  = "missioncenter"
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("XCURSOR_THEME", "BreezeX-Light")
+hl.env("XCURSOR_THEME", "Breeze_Light")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("QT_QPA_PLATFORMTHEME_QT6", "qt6ct")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
@@ -117,7 +116,7 @@ hl.config({
 
         -- https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
         col = {
-            active_border   = "rgba(FDB975ee)",
+            active_border   = "rgba(9ECAFCee)",
             inactive_border = "rgba(595959aa)",
         },
 
@@ -221,6 +220,8 @@ hl.config({
     misc = {
         force_default_wallpaper = 0,    -- Set to 0 or 1 to disable the anime mascot wallpapers
         disable_hyprland_logo = true, -- If true disables the random hyprland logo / anime girl background. :(
+        focus_on_activate = true,
+        on_focus_under_fullscreen = 0,
         vrr = 3,
     },
     render = {
@@ -299,11 +300,11 @@ hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("dms ipc call lock lock"))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("dms ipc call clipboard toggle"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("dms ipc call keybinds toggle hyprland"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("dms ipc call notepad toggle"))
-hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("dms ipc call spotlight toggleQuery !"))
+hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("dms ipc call overview toggle"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("scratchpad"))
---hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 4.0,},})'"))
---hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 1.0,},})'"))
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 4.0,},})'"))
+hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 1.0,},})'"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -639,12 +640,14 @@ end
 local function enableGamePerf()
     if gamePerfEnabled then return end
     hl.exec_cmd("powerprofilesctl set performance")
+    hl.exec_cmd("dms ipc notifications enableDoNotDisturbIndefinitely")
     gamePerfEnabled = true
 end
 
 local function disableGamePerf()
     if not gamePerfEnabled then return end
     hl.exec_cmd("powerprofilesctl set balanced")
+    hl.exec_cmd("dms ipc notifications disableDoNotDisturb")
     gamePerfEnabled = false
 end
 
@@ -664,3 +667,10 @@ hl.on("window.close", function(win)
         end
     end
 end)
+
+
+require("dms.cursor")
+
+require("dms.binds")
+
+require("dms.binds-user")
