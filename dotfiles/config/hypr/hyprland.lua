@@ -116,7 +116,7 @@ hl.config({
 
         -- https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
         col = {
-            active_border   = "rgba(9ECAFCee)",
+            active_border   = "rgba(B5C4FFee)",
             inactive_border = "rgba(595959aa)",
         },
 
@@ -560,6 +560,9 @@ local function enableTearing()
         misc = {
             vrr = 0,
         },
+        render = {
+        	direct_scanout = 0,
+        },
         cursor = {
             no_break_fs_vrr = 0,
         },
@@ -581,6 +584,9 @@ local function disableTearing()
         },
         misc = {
             vrr = 3,
+        },
+        render = {
+        	direct_scanout = 2,
         },
         cursor = {
             no_break_fs_vrr = 2,
