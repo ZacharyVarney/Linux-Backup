@@ -8,6 +8,8 @@ hl.monitor({
     mode     = "3440x1440@165",
     position = "1152x700",
     scale    = "1.25",
+	bitdepth = 10,
+	cm = "wide",
 })
 hl.monitor({
     output    = "DP-2",
