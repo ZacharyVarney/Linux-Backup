@@ -34,7 +34,7 @@ hl.monitor({
 local terminal    = "kitty"
 local fileManager = "dolphin"
 local menu        = "dms ipc call spotlight-bar toggle"
-local browser 	  = "brave-origin-beta"
+local browser 	  = "brave-origin"
 local sysMonitor  = "missioncenter"
 
 
@@ -52,7 +52,6 @@ local sysMonitor  = "missioncenter"
    hl.exec_cmd("systemctl --user start hyprpolkitagent")
    hl.exec_cmd("systemctl --user set-environment")
    hl.exec_cmd("systemctl --user import-environment")
-   hl.exec_cmd("hyprctl setcursor Breeze_Light 24")
    hl.exec_cmd("kbuildsycoca6 --noincremental")
    hl.exec_cmd("$HOME/.config/hypr/hyprdesktop.sh")
    hl.exec_cmd("bash -c 'wl-paste --watch cliphist store &'")
@@ -66,9 +65,6 @@ local sysMonitor  = "missioncenter"
 
 -- See https://wiki.hypr.land/Configuring/Environment-variables/
 
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("XCURSOR_THEME", "Breeze_Light")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("QT_QPA_PLATFORMTHEME_QT6", "qt6ct")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
