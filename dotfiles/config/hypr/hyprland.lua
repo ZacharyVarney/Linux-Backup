@@ -17,6 +17,8 @@ hl.monitor({
     position  = "0x0",
     scale     = "1.25",
     transform = 1,
+	bitdepth = 10,
+	cm = "srgb",
 })
 hl.monitor({
     output   = "HDMI-A-1",
@@ -503,16 +505,15 @@ hl.window_rule({
 ---- GAME TEARING HOOK -----
 ----------------------------
 
--- This is useful for competitive or latency sensitive games that benefit from tearing because vrr does not play nice with tearing enabled at the same time.
-
 local tearingGames = {
     ["cs2"] = true,
     ["momentum"] = true,
     ["steam_app_2622380"] = true,
 }
 
-local activeGames = 0
+local trackedTearingGames = {}
 local tearingEnabled = false
+local stateFile = "/tmp/hypr-tearing-state"
 
 local function enableTearing()
     if tearingEnabled then
@@ -527,12 +528,14 @@ local function enableTearing()
             vrr = 0,
         },
         render = {
-        	direct_scanout = 0,
+            direct_scanout = 0,
         },
         cursor = {
-            no_break_fs_vrr = 0,
+            no_hardware_cursors = 1,
         },
     })
+
+    os.execute("touch " .. stateFile)
 
     hl.exec_cmd([[notify-send "Gaming Mode" "Tearing Enabled // VRR Disabled"]])
 
@@ -552,12 +555,14 @@ local function disableTearing()
             vrr = 3,
         },
         render = {
-        	direct_scanout = 2,
+            direct_scanout = 2,
         },
         cursor = {
-            no_break_fs_vrr = 2,
+            no_hardware_cursors = 0,
         },
     })
+
+    os.remove(stateFile)
 
     hl.exec_cmd([[notify-send "Gaming Mode" "Tearing Disabled // VRR Enabled"]])
 
@@ -566,83 +571,93 @@ end
 
 hl.on("window.open", function(win)
     if win.class and tearingGames[win.class] then
-        activeGames = activeGames + 1
+        trackedTearingGames[win.address] = true
         enableTearing()
     end
 end)
 
 hl.on("window.close", function(win)
-    if win.class and tearingGames[win.class] then
-        activeGames = activeGames - 1
+    trackedTearingGames[win.address] = nil
 
-        if activeGames == 0 then
-            disableTearing()
-        end
+    if next(trackedTearingGames) == nil then
+        disableTearing()
     end
 end)
+
+if io.open(stateFile, "r") then
+    enableTearing()
+end
 
 
 -------------------------------
 ---- GAME PERFORMANCE HOOK ----
 -------------------------------
 
-local gamePerfPatterns = {
-    "cs2",
-    "momentum",
-    "^steam_app_",
-    "gamescope",
-    "^Minecraft",
-}
-
-local activePerfGames = 0
+local gameTag = "game"
 local gamePerfEnabled = false
+local trackedGames = {}
+local stateFilePerf = "/tmp/hypr-game-performance-state"
 
-local function isGamePerfWindow(class)
-    if not class then return false end
+local function hasGameTag(win)
+    if not win then
+        return false
+    end
 
-    for _, pattern in ipairs(gamePerfPatterns) do
-        if string.match(class, pattern) then
-            return true
+    if win.tags then
+        for _, tag in ipairs(win.tags) do
+            if tag == gameTag or tag == gameTag .. "*" then
+                return true
+            end
         end
     end
 
     return false
 end
 
-local function enableGamePerf()
-    if gamePerfEnabled then return end
-    hl.exec_cmd("powerprofilesctl set performance")
-    hl.exec_cmd("dms ipc notifications enableDoNotDisturbIndefinitely")
-    gamePerfEnabled = true
-end
+local function setGamePerf(enabled)
+    if enabled == gamePerfEnabled then
+        return
+    end
 
-local function disableGamePerf()
-    if not gamePerfEnabled then return end
-    hl.exec_cmd("powerprofilesctl set balanced")
-    hl.exec_cmd("dms ipc notifications disableDoNotDisturb")
-    gamePerfEnabled = false
+    gamePerfEnabled = enabled
+
+    if enabled then
+        hl.exec_cmd("powerprofilesctl set performance")
+        hl.exec_cmd("dms ipc notifications enableDoNotDisturbIndefinitely")
+
+        -- Save state for HyprLua reload recovery
+        os.execute("touch " .. stateFilePerf)
+    else
+        hl.exec_cmd("powerprofilesctl set balanced")
+        hl.exec_cmd("dms ipc notifications disableDoNotDisturb")
+
+        -- Remove state when gaming mode ends
+        os.remove(stateFilePerf)
+    end
 end
 
 hl.on("window.open", function(win)
-    if isGamePerfWindow(win.class) then
-        activePerfGames = activePerfGames + 1
-        enableGamePerf()
+    if hasGameTag(win) then
+        trackedGames[win.address] = true
+        setGamePerf(true)
     end
 end)
 
 hl.on("window.close", function(win)
-    if isGamePerfWindow(win.class) then
-        activePerfGames = math.max(0, activePerfGames - 1)
+    if trackedGames[win.address] then
+        trackedGames[win.address] = nil
+    end
 
-        if activePerfGames == 0 then
-            disableGamePerf()
-        end
+    if next(trackedGames) == nil then
+        setGamePerf(false)
     end
 end)
 
+if io.open(stateFilePerf, "r") then
+    setGamePerf(true)
+end
+
 
 require("dms.cursor")
-
 require("dms.binds")
-
 require("dms.binds-user")
