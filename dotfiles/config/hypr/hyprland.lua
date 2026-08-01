@@ -9,7 +9,7 @@ hl.monitor({
     position = "1152x700",
     scale    = "1.25",
 	bitdepth = 10,
-	cm = "wide",
+	cm = "srgb",
 })
 hl.monitor({
     output    = "DP-2",
@@ -48,14 +48,7 @@ local sysMonitor  = "missioncenter"
 -- Or execute your favorite apps at launch like this
  hl.on("hyprland.start", function () 
    hl.exec_cmd("$HOME/.config/hypr/scaling-xorg.sh")
-   hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-   hl.exec_cmd("dbus-update-activation-environment --systemd --all")
-   hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
    hl.exec_cmd("systemctl --user start hyprpolkitagent")
-   hl.exec_cmd("systemctl --user set-environment")
-   hl.exec_cmd("systemctl --user import-environment")
-   hl.exec_cmd("kbuildsycoca6 --noincremental")
-   hl.exec_cmd("$HOME/.config/hypr/hyprdesktop.sh")
    hl.exec_cmd("bash -c 'wl-paste --watch cliphist store &'")
    hl.exec_cmd("dms run")
  end)
@@ -92,10 +85,9 @@ hl.config({
 
 hl.workspace_rule({ workspace = "1", monitor = "DP-1", persistent = true })
 hl.workspace_rule({ workspace = "2", monitor = "DP-1", persistent = true })
-hl.workspace_rule({ workspace = "3", monitor = "DP-1", persistent = true, layout = "monocle" })
+hl.workspace_rule({ workspace = "3", monitor = "DP-1", persistent = true })
 hl.workspace_rule({ workspace = "4", monitor = "DP-2", persistent = true, layout = "dwindle" })
 hl.workspace_rule({ workspace = "5", monitor = "HDMI-A-1", persistent = true, layout = "dwindle" })
-hl.workspace_rule({ workspace = "special:scratchpad", persistent = true, layout = "monocle" })
 
 
 -----------------------
@@ -110,14 +102,6 @@ hl.config({
         gaps_in  = 5,
         gaps_out = 10,
 
-        border_size = 2,
-
-        -- https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
-        col = {
-            active_border   = "rgba(B5C4FFee)",
-            inactive_border = "rgba(595959aa)",
-        },
-
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false,
 
@@ -131,7 +115,6 @@ hl.config({
 -- https://wiki.hypr.land/Configuring/Variables/#decoration
 hl.config({
     decoration = {
-        rounding       = 10,
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
@@ -209,7 +192,7 @@ hl.config({
         fullscreen_on_one_column = true,
         column_width = 0.5,
         focus_fit_method = 1,
-        explicit_column_widths = "0.5, 0.75, 1.0",
+        explicit_column_widths = "0.5, 0.8, 1.0",
     },
 })
 
@@ -226,8 +209,8 @@ hl.config({
     	direct_scanout = 2,
     },
     cursor = {
-    	no_hardware_cursors = 1,
-    	no_break_fs_vrr = 2,
+    	no_hardware_cursors = 0,
+    	no_break_fs_vrr = 0,
     },
 })
 
@@ -255,20 +238,6 @@ hl.config({
 
         accel_profile = "flat",
     },
-})
-
--- See https://wiki.hypr.land/Configuring/Gestures/
-hl.gesture({
-    fingers = 3,
-    direction = "horizontal",
-    action = "workspace"
-})
-
--- Example per-device config
--- See https://wiki.hypr.land/Configuring/Keywords/#per-device-input-configs for more
-hl.device({
-    name        = "epic-mouse-v1",
-    sensitivity = -0.5,
 })
 
 
@@ -300,7 +269,6 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("dms ipc call keybinds toggle hyprlan
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("dms ipc call notepad toggle"))
 hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("dms ipc call overview toggle"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("scratchpad"))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 4.0,},})'"))
 hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 1.0,},})'"))
 
