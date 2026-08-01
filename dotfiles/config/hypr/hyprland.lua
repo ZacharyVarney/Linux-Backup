@@ -49,7 +49,6 @@ local sysMonitor  = "missioncenter"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this
  hl.on("hyprland.start", function () 
-   hl.exec_cmd("$HOME/.config/hypr/scaling-xorg.sh")
    hl.exec_cmd("systemctl --user start hyprpolkitagent")
    hl.exec_cmd("bash -c 'wl-paste --watch cliphist store &'")
    hl.exec_cmd("dms run")
