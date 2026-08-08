@@ -17,7 +17,6 @@ hl.monitor({
     position  = "0x0",
     scale     = "1.25",
     transform = 1,
-	bitdepth = 10,
 	cm = "srgb",
 })
 hl.monitor({
@@ -49,7 +48,6 @@ local sysMonitor  = "missioncenter"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this
  hl.on("hyprland.start", function () 
-   hl.exec_cmd("systemctl --user start hyprpolkitagent")
    hl.exec_cmd("bash -c 'wl-paste --watch cliphist store &'")
    hl.exec_cmd("dms run")
  end)
@@ -89,6 +87,14 @@ hl.workspace_rule({ workspace = "2", monitor = "DP-1", persistent = true })
 hl.workspace_rule({ workspace = "3", monitor = "DP-1", persistent = true })
 hl.workspace_rule({ workspace = "4", monitor = "DP-2", persistent = true, layout = "dwindle" })
 hl.workspace_rule({ workspace = "5", monitor = "HDMI-A-1", persistent = true, layout = "dwindle" })
+
+-- Smart Gaps
+hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
+hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 0 })
+hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 })
+hl.window_rule({ match = { float = false, workspace = "f[1]" }, border_size = 0 })
+hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
 
 
 -----------------------
@@ -268,7 +274,7 @@ hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("dms ipc call lock lock"))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("dms ipc call clipboard toggle"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("dms ipc call keybinds toggle hyprland"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("dms ipc call notepad toggle"))
-hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("dms ipc call overview toggle"))
+hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("dms ipc call spotlight toggleQuery !"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 4.0,},})'"))
 hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 1.0,},})'"))
@@ -658,5 +664,6 @@ end
 
 
 require("dms.cursor")
+require("dms.layout")
 require("dms.binds")
 require("dms.binds-user")
