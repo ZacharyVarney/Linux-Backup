@@ -2,7 +2,6 @@
 ---- MONITORS ----
 ------------------
 
--- See https://wiki.hypr.land/Configuring/Monitors/
 hl.monitor({
     output   = "DP-1",
     mode     = "3440x1440@165",
@@ -31,8 +30,6 @@ hl.monitor({
 ---- MY PROGRAMS ----
 ---------------------
 
--- See https://wiki.hypr.land/Configuring/Keywords/
-
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "dolphin"
@@ -50,14 +47,13 @@ local sysMonitor  = "missioncenter"
  hl.on("hyprland.start", function () 
    hl.exec_cmd("bash -c 'wl-paste --watch cliphist store &'")
    hl.exec_cmd("dms run")
+   hl.exec_cmd("gsr-ui launch-daemon")
  end)
 
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
-
--- See https://wiki.hypr.land/Configuring/Environment-variables/
 
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("QT_QPA_PLATFORMTHEME_QT6", "qt6ct")
@@ -82,6 +78,7 @@ hl.config({
 ---- WORKSPACES ----
 --------------------
 
+-- Pinning workspaces & setting layouts
 hl.workspace_rule({ workspace = "1", monitor = "DP-1", persistent = true })
 hl.workspace_rule({ workspace = "2", monitor = "DP-1", persistent = true })
 hl.workspace_rule({ workspace = "3", monitor = "DP-1", persistent = true })
@@ -101,25 +98,14 @@ hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
 ---- LOOK AND FEEL ----
 -----------------------
 
--- Refer to https://wiki.hypr.land/Configuring/Variables/
-
--- https://wiki.hypr.land/Configuring/Variables/#general
 hl.config({
     general = {
-        gaps_in  = 5,
-        gaps_out = 10,
-
-        -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
-        resize_on_border = false,
-
-        -- Please see https://wiki.hypr.land/Configuring/Tearing/ before you turn this on
         allow_tearing = false,
 
         layout = "scrolling",
     },
 })
 
--- https://wiki.hypr.land/Configuring/Variables/#decoration
 hl.config({
     decoration = {
         rounding_power = 2,
@@ -135,7 +121,6 @@ hl.config({
             color        = 0xee1a1a1a,
         },
 
-        -- https://wiki.hypr.land/Configuring/Variables/#blur
         blur = {
             enabled   = true,
             size      = 10,
@@ -145,21 +130,20 @@ hl.config({
     },
 })
 
--- https://wiki.hypr.land/Configuring/Variables/#animations
 hl.config({
     animations = {
         enabled = true,
     },
 })
 
--- Default curves, see https://wiki.hypr.land/Configuring/Animations/#curves
+-- Default curves
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}    } })
 hl.curve("linear",         { type = "bezier", points = { {0, 0},       {1, 1}       } })
 hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1}    } })
 hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}     } })
 
--- Default animations, see https://wiki.hypr.land/Configuring/Animations/
+-- Default animations
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
 hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, bezier = "easeOutQuint" })
@@ -178,7 +162,6 @@ hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
--- See https://wiki.hypr.land/Configuring/Dwindle-Layout/ for more
 hl.config({
     dwindle = {
         preserve_split = true, -- You probably want this
@@ -186,14 +169,12 @@ hl.config({
     },
 })
 
--- See https://wiki.hypr.land/Configuring/Master-Layout/ for more
 hl.config({
     master = {
         new_status = "slave",
     },
 })
 
--- See https://wiki.hypr.land/Configuring/Scrolling-Layout/ for more
 hl.config({
     scrolling = {
         fullscreen_on_one_column = true,
@@ -203,7 +184,6 @@ hl.config({
     },
 })
 
--- https://wiki.hypr.land/Configuring/Variables/#misc
 hl.config({
     misc = {
         force_default_wallpaper = 0,    -- Set to 0 or 1 to disable the anime mascot wallpapers
@@ -216,7 +196,7 @@ hl.config({
     	direct_scanout = 2,
     },
     cursor = {
-    	no_hardware_cursors = 0,
+    	no_hardware_cursors = 2,
     	no_break_fs_vrr = 0,
     },
 })
@@ -226,7 +206,6 @@ hl.config({
 ---- INPUT ----
 ---------------
 
--- https://wiki.hypr.land/Configuring/Variables/#input
 hl.config({
     input = {
         kb_layout  = "us",
@@ -252,10 +231,8 @@ hl.config({
 ---- KEYBINDINGS ----
 ---------------------
 
--- See https://wiki.hypr.land/Configuring/Keywords/
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
--- Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
@@ -276,8 +253,9 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("dms ipc call keybinds toggle hyprlan
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("dms ipc call notepad toggle"))
 hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("dms ipc call spotlight toggleQuery !"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 4.0,},})'"))
-hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 1.0,},})'"))
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 1.0,},})'"))
+hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 4.0,},})'"))
+hl.bind(mainMod .. " + CTRL + Y", hl.dsp.exec_cmd("hyprctl dispatch 'hl.config({cursor = {zoom_factor = 2.0,},})'"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -292,19 +270,21 @@ hl.bind(mainMod .. " + SHIFT + up",    hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.move({ direction = "down" }))
 
 -- Move scrolling windows around
-hl.bind(mainMod .. " + CTRL + left", hl.dsp.layout("swapcol l"))
-hl.bind(mainMod .. " + CTRL + right", hl.dsp.layout("swapcol r"))
+hl.bind(mainMod .. " + CTRL + left", hl.dsp.layout("move -col"))
+hl.bind(mainMod .. " + CTRL + right", hl.dsp.layout("move +col"))
+hl.bind(mainMod .. " + K", hl.dsp.layout("swapcol l"))
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.layout("swapcol r"))
 hl.bind(mainMod .. " + H", hl.dsp.layout("colresize +conf"))
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.layout("colresize -conf"))
 
 -- Move monocle windows around
-hl.bind(mainMod .. " + D", hl.dsp.layout("cyclenext"))
-hl.bind(mainMod .. " + SHIFT + D", hl.dsp.layout("cycleprev"))
+hl.bind(mainMod .. " + M", hl.dsp.layout("cyclenext"))
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.layout("cycleprev"))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
-for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
+for i = 1, 6 do
+    local key = i % 6 -- 10 maps to key 0
     hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
     hl.bind(mainMod .. " + CTRL + " .. key,      hl.dsp.window.move({ workspace = i, follow = false }))
@@ -332,11 +312,6 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("dms ipc call mpris previous"),   { lo
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
-
--- See https://wiki.hypr.land/Configuring/Window-Rules/ for more
--- See https://wiki.hypr.land/Configuring/Workspace-Rules/ for workspace rules
-
--- Example window rules that are useful
 
 local suppressMaximizeRule = hl.window_rule({
     -- Ignore maximize requests from all apps. You'll probably like this.
@@ -401,6 +376,17 @@ hl.window_rule({
 	},
 	no_initial_focus = true,
 	suppress_event = "activate",
+})
+hl.window_rule({
+	name = "unreal-engine-float-tweaks",
+	match = {
+		class = "UnrealEditor",
+		title = "\\w*",
+		float = true
+	},
+	suppress_event = "x11configurerequest",
+	border_size = 0,
+	rounding = 0,
 })
 
 -- Davinci Resolve fixes
@@ -535,9 +521,6 @@ local function enableTearing()
         render = {
             direct_scanout = 0,
         },
-        cursor = {
-            no_hardware_cursors = 1,
-        },
     })
 
     os.execute("touch " .. stateFile)
@@ -561,9 +544,6 @@ local function disableTearing()
         },
         render = {
             direct_scanout = 2,
-        },
-        cursor = {
-            no_hardware_cursors = 0,
         },
     })
 
