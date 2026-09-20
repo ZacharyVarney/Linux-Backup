@@ -25,6 +25,9 @@ hl.monitor({
     scale    = "1",
 })
 
+-- Primary monitor for XWayland
+local xwaylandPrimary = "DP-1"
+
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -45,11 +48,11 @@ local sysMonitor  = "missioncenter"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this
  hl.on("hyprland.start", function () 
+   hl.exec_cmd("xrandr --output " .. xwaylandPrimary .. " --primary")
    hl.exec_cmd("hyprpm reload")
    hl.exec_cmd("bash -c 'wl-paste --watch cliphist store &'")
    hl.exec_cmd("dms run")
    hl.exec_cmd("gsr-ui launch-daemon")
-   hl.exec_cmd("xrandr --output DP-1 --primary")
  end)
 
 
