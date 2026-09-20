@@ -45,9 +45,11 @@ local sysMonitor  = "missioncenter"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this
  hl.on("hyprland.start", function () 
+   hl.exec_cmd("hyprpm reload")
    hl.exec_cmd("bash -c 'wl-paste --watch cliphist store &'")
    hl.exec_cmd("dms run")
    hl.exec_cmd("gsr-ui launch-daemon")
+   hl.exec_cmd("xrandr --output DP-1 --primary")
  end)
 
 
@@ -92,6 +94,29 @@ hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 
 hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 })
 hl.window_rule({ match = { float = false, workspace = "f[1]" }, border_size = 0 })
 hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
+
+
+-----------------
+---- PLUGINS ----
+-----------------
+
+hl.config({
+    plugin = {
+        scrolloverview = {
+            gesture_distance = 300, -- how far is the "max" for the gesture
+            scale = 0.5, -- preferred overview scale
+            workspace_gap = 100,
+            layout = "vertical", -- vertical, horizontal, or auto (per-monitor orientation)
+            wallpaper = 2, -- 0: global only, 1: per-workspace only, 2: both
+            blur = true, -- blur only the main overview wallpaper
+
+            shadow = {
+                enabled = true,
+                range = 50,
+            },
+        },
+    },
+})
 
 
 -----------------------
@@ -157,9 +182,9 @@ hl.animation({ leaf = "layersIn",      enabled = true,  speed = 4,    bezier = "
 hl.animation({ leaf = "layersOut",     enabled = true,  speed = 1.5,  bezier = "linear",       style = "fade" })
 hl.animation({ leaf = "fadeLayersIn",  enabled = true,  speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true,  speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces",    enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspaces",    enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefadevert" })
+hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "almostLinear", style = "slidefadevert" })
+hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefadevert" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
 hl.config({
@@ -243,9 +268,9 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(sysMonitor))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("hyprshot -z -m output -o $HOME/Pictures/Screenshots/"))
-hl.bind(mainMod .. " + CTRL + I", hl.dsp.exec_cmd("hyprshot -z -m region -o $HOME/Pictures/Screenshots/"))
-hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("hyprshot -z -m window -o $HOME/Pictures/Screenshots/"))
+hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("dms screenshot full -f png"))
+hl.bind(mainMod .. " + CTRL + I", hl.dsp.exec_cmd("dms screenshot region -f png"))
+hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("dms screenshot window -f png"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("pavucontrol-qt"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("dms ipc call lock lock"))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("dms ipc call clipboard toggle"))
@@ -280,6 +305,11 @@ hl.bind(mainMod .. " + SHIFT + H", hl.dsp.layout("colresize -conf"))
 -- Move monocle windows around
 hl.bind(mainMod .. " + M", hl.dsp.layout("cyclenext"))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.layout("cycleprev"))
+
+-- Toggle ScrollOverview with SUPER+g
+hl.bind(mainMod .. " + G", function()
+    hl.plugin.scrolloverview.overview("toggle all")
+end)
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -377,17 +407,6 @@ hl.window_rule({
 	no_initial_focus = true,
 	suppress_event = "activate",
 })
-hl.window_rule({
-	name = "unreal-engine-float-tweaks",
-	match = {
-		class = "UnrealEditor",
-		title = "\\w*",
-		float = true
-	},
-	suppress_event = "x11configurerequest",
-	border_size = 0,
-	rounding = 0,
-})
 
 -- Davinci Resolve fixes
 hl.window_rule({
@@ -408,6 +427,14 @@ hl.window_rule({
 		class = "steam",
 	},
 	min_size = "1 1",
+})
+hl.window_rule({
+    match = {
+        title = "^(notificationtoasts_.*_desktop)$",
+        class = "^(steam)$"
+    },
+    pin = true,
+    focus_on_activate = false,
 })
 -- Tagging game windows
 hl.window_rule({
